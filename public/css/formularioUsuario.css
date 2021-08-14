@@ -1,0 +1,130 @@
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .logo2{
+    width: 50px;
+   height: 50px;
+   text-align: center;
+   border-radius: 50px;
+   margin-left: 110px;
+   border: 1px solid color white;
+  }
+
+   /* boton inicio/registro */
+   .btn-group a {
+     text-decoration: none;
+    background-color: white;
+    color: black;
+    width: 50%;
+    padding: 10px;
+    margin: 15px 0 2px 0;
+    border: 1px solid #5DADE2;
+    cursor: pointer; /* Puntero / icono de mano */
+    float: left; /*Flotar los botones uno al lado del otro */
+  }
+  
+   .btn-group button:not(:last-child) {
+    border-right: none; /* Evitar bordes dobles */
+  }
+  
+  /* Borrar flotadores (truco clearfix) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Agrega un color de fondo al pasar el mouse */
+  .btn-group a:hover {
+    background-color: #5DADE2;
+  }
+  
+  /* La imagen utilizada */
+   .bg-img {
+     background-image: url("/images/prueba.jpg"); 
+  
+    /* Controla la altura de la imagen */
+    height: 580px;
+  
+    /*Centra y escala la imagen de forma agradable*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+  
+  /* Agregar estilos al contenedor de formularios */
+  .container {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    right: 0;
+    margin-top: 50px;
+    margin-right: 600px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Campos de entrada de ancho completo */
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Establecer un estilo para el botón enviar */
+  .btn {
+    background-color: #5DADE2;
+    color: white;
+    padding: 16px 20px;
+    margin: 0 0 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+
+.acceso-rapido{
+   text-align: center; /*alineacion centrada */
+}
+
+/*iconos de acceso rapido */
+
+  .iconos-registro{
+    text-align: center;
+    font-size: 30px;
+  }
+
+  /*agregue los colores a los botones de Facebook, Twitter y Google */
+.fb i{
+  background-color: #3B5998;
+  color: white;
+  padding: 3px;
+  margin: 3px 5px;
+}
+
+.twitter i{
+  background-color: #55ACEE;
+  color: white;
+  padding: 3px;
+  margin: 3px 5px;
+}
+
+.google i{
+  background-color: #dd4b39;
+  color: white;
+  padding: 3px;
+  margin: 3px 5px;
+}

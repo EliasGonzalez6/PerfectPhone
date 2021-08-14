@@ -1,0 +1,15 @@
+*{box-sizing: border-box;}
+  body {margin: 0; padding: 0; border: 0;}
+  header {margin: 0; padding: 0; border: 0;}
+  main {margin: 0; padding: 0; padding-top: 50px; border: 0;}
+  footer {margin: 0; padding: 0; border: 0;}
+
+  .titulo-carrito{
+    height: 340px;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 0%;
+    padding: 100px 0px 0px 0px;
+    text-align: center;
+  }

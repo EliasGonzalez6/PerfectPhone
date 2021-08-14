@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("./layouts/head") %>    
+  <body>
+  <%- include ("./layouts/header") %>
+<main>
+
+    <div class="bg-img">
+        <form action="/action_page.php" class="container">
+          <img src="/images/logo.jpg" class="logo2">
+          <div class="btn-group">
+            <a href="/formularioUsuario">Inicia Sesión</a>
+            <a href="/formularioRegistro">Registrate</a>
+          </div>
+          <p></p>       
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Email" name="email" required>
+      
+          <label for="psw"><b>Clave</b></label>
+          <input type="password" placeholder="Clave" name="psw" required>
+      
+          <button type="submit" class="btn">Iniciar Sesión</button>
+          <a href="#"> Olvidaste tu clave? </a>
+          <p>
+          <p class="acceso-rapido">Acceso rápido con</p>
+
+          <div class="iconos-registro">
+            <a href="#" class="fb"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="google"><i class="fab fa-google"></i></a>
+          </div>
+        </form>
+  </div>
+
+</main>
+
+<footer>
+
+<div class="footer" id="footer">
+
+      <div class="footer-contacto">
+      <P>¿Dudas?</P>
+      <P>¿Preguntas</P>
+      <h4>¡CONTACTANOS!</h4>
+      <h4><i class="far fa-envelope"></i> Correo PerfectPhone@gmail.com</h4>
+      <h4><i class="fab fa-whatsapp"></i> Whatsapp 11-57215382</h4>
+      </div>
+
+            <div class="footer-redes">
+            <h4>SIGUENOS</h4>
+            <P>EN NUESTRAS REDES SOCIALES</P>
+            <p><a href="#"><i class="fab fa-facebook"></i>Facebook</a></p>
+            <p><a href="#"><i class="fab fa-instagram"></i>Instagram</a></p>
+            <p><a href="#"><i class="fab fa-twitter"></i></i>Twitter</a></p>
+            </div>
+
+      <div class="footer-derechos">
+      <img src="/images/logo.jpg" class="logo">
+      <p>Accesorios para dispositivos móviles</p>
+      <h6>Copyrigh Perfect Phone 2021</h6>
+    </div>
+ 
+</div>
+
+</footer>
+
+</body>
+</html>

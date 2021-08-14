@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+    <body>
+    <%- include ("../layouts/header") %>
+        <main class="col-12 col-s-12" style="display:block; clear:both; background-color:black; padding-top:10%; text-align:center; padding-bottom:10%;">    
+            <div class="col-6 col-s-12" style="margin-left:25%; background-color:white; padding:20px; border-radius:10px;">
+
+                <form action="/product/update/<%= product.id %>?_method=PATCH" method="post" id="edit-form" enctype="multipart/form-data">
+                    <fieldset>
+                        <figure><img src="/uploads/productos/<%=product.image%>" alt="" style="width:30%"></figure>
+                        <label for="image">image</label>
+                        <input type="file" name="image" id="image">
+                    </fieldset>
+                    <fieldset>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" value="<%= product.name %>" >
+                        <h2><%= product.categoria %></h2>
+                    </fieldset>
+                    <fieldset>
+                        <label for="brand">Marca</label>
+                        <select name="brand" id="brand">
+                            <% brands.forEach(brand => { %>
+                                <% if (product.brand.id == brand.id) { %>
+                                    <option value="<%= brand.id %>" selected><%= brand.name %></option>
+                                <% } else { %>
+                                    <option value="<%= brand.id %>"><%= brand.name %></option>
+                                <% } %>
+                            <% }) %>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label for="colors">Colors</label>
+                        <select name="colors" id="colors" multiple>
+                            <% colors.forEach(color => { %>
+                                <% let match = product.colors.filter(productColor => productColor.id == color.id) %>
+                                <% if (match.length > 0) { %>
+                                    <option selected value="<%= color.id %>" style="<%= `background-color:${color.value};`%>"><%= color.name %></option>
+                                <% } else { %>
+                                    <option value="<%= color.id %>" style="<%= `background-color:${color.value};` %>"><%= color.name %></option>
+                                <% } %>
+                            <% }) %>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit">Send</button>
+                    </fieldset>
+                </form> 
+            </div>  
+        </main>
+    </body>
+</html>
+</body>
+</html>

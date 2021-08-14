@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+  <body>
+  <%- include ("../layouts/header") %>
+  <main class="col-12 col-s-12" style="display:block; clear:both; background-color:black; padding-top:10%; text-align:center; padding-bottom:10%;"">    
+    <div class="col-6 col-s-12" style="margin-left:25%; background-color:white; padding:20px; border-radius:10px;">
+            <% if (product.image) { %>
+                <figure><img src="/uploads/products/<%= product.image%>" alt="" style="width:30%"></figure>
+            <% } else { %>
+                <figure><img src="/images/default.jpg" alt=""></figure>
+            <% } %>        
+                <h2><%= product.name %></h2>
+                <p><%= product.brand.name %></p>
+                <form action="/carrito" method="GET">
+                    <h3>Colors</h3>                    
+                    <fieldset>
+                    <% product.colors.forEach(color => { %>                        
+                            <input type="radio" name="color" required id="color-<%= color.id %>" value="<%= color.id %>"/>
+                            <label for="color-<%= color.id %>">
+                                <%= color.name %>
+                                <span style="<%= `background-color:${color.value};`%> display: inline-block; width: 1rem; height:1rem" class="color"></span>
+                            </label>                        
+                    <% }) %>                                        
+                        <label for="quantity">Quantity</label>
+                        <input type="number" min="1" max="3" value="1" required>
+                        <button type="submit" style="margin-left: 10px;">comprar</button>                                        
+                </form>
+                <div style="clear: both"></div>
+                    <form action="/product/create" method="GET" style="display:in-line;" class="col-4 col-s-4">
+                        <button type="submit">Crear</button>
+                    </form>
+                    
+                    <a href="/product/edit/<%= product.id %>">Editar</a>                                           
+                    
+                    <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display:in-line;" class="col-4 col-s-4">
+                        <button type="submit">Borrar</button>
+                    </form>
+                </fieldset>
+            </div>
+    </main>
+    <%- include ("../layouts/footer") %>
+</body>
+</html>

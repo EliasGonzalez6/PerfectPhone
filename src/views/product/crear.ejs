@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+  <body>
+  <%- include ("../layouts/header") %>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:black; padding-top:10%; text-align:center; padding-bottom:10%;">    
+        <div class="col-6 col-s-12" style="margin-left:25%; background-color:white; padding:20px; border-radius:10px;">
+            <form action="/product/save" method="post" id="create-form" enctype="multipart/form-data">
+                <fieldset>
+                    <label for="image">Image</label>
+                    <input type="file" name="image" id="image">
+                </fieldset>
+
+                <fieldset>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </fieldset>
+            <fieldset>
+                <label for="brand">Brand</label>
+                <select name="brand" id="brand">
+                    <option value="" selected disabled>Chouse One</option>
+                    <% brands.forEach(brand => { %>
+                        <option value="<%= brand.id %>">
+                            <%= brand.name %>
+                        </option>
+                    <% }) %>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="colors">Colors</label>
+                <select name="colors" id="colors" multiple>
+                    <% colors.forEach(color => { %>
+                        <option value="<%= color.id %>" style="<%= `background-color:${color.value};`%>">
+                            <%= color.name %>
+                        </option>
+                    <% }) %>
+                </select>
+            </fieldset>
+            <fieldset>
+                <button type="submit">Send</button>
+            </fieldset>
+            </form> 
+        </div>
+    </main>
+    <%- include ("../layouts/footer") %>
+</body>
+</html>
