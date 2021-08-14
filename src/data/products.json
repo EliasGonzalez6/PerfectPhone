@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "prueba 1",
+    "brand": 1,
+    "colors": [
+      1,
+      2
+    ],
+    "image": "image-1628964787185.jpg"
+  }
+]
