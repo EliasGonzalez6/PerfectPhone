@@ -1,22 +1,13 @@
 [
   {
-    "id": 1,
-    "name": "prueba 1",
+    "id": 5,
+    "name": "Demo C1",
     "brand": 1,
     "colors": [
       1,
-      2
-    ],
-    "image": "image-1628964611114.jpg"
-  },
-  {
-    "id": 2,
-    "name": "prueba 1",
-    "brand": 1,
-    "colors": [
-      1,
+      2,
       3
     ],
-    "image": "image-1628984355944.jpg"
+    "image": "image-1630974355316.jpg"
   }
 ]

@@ -7,7 +7,7 @@
     <!--<section id="list-products">-->
         <% list.forEach(product => { %>                  
             <div class="col-4 col-s-12" style="padding:20px;">          
-                <div style="background-color: white; padding:15px;">    
+                <div style="background-color: white; padding:20px;">    
                     <table style="text-align: center; width:100%">  
                         <tr>      
                             <td style="text-align:center"; colspan="2">
@@ -17,9 +17,9 @@
                         <tr>
                             <td style="text-align:left"; >
                                 <% if (product.image) { %>
-                                    <img style="width:150px" src="/uploads/products/<%= product.image%>" alt="">
+                                    <img style="width:250px; height: 200px;" src="/uploads/products/<%= product.image%>" alt="">
                                 <% } else { %>
-                                    <img style="width:150px" src="/images/default.jpg" alt="">
+                                    <img style="width:250px; height: 200px;" src="/images/default.jpg" alt="">
                                 <% } %>
                             </td>
                             <td style="text-align:left"; >
@@ -27,8 +27,8 @@
                             </td>                            
                         </tr>  
                         <tr>      
-                            <td style="text-align:center"; colspan="2">
-                                <a href="/product/<%= product.id %>">show more</a>
+                            <td style="text-align:right;"; colspan="2">
+                                <a href="/product/<%= product.id %>">Ver mas</a>
                             </td>                
                         </tr>
                     </table>                                                    

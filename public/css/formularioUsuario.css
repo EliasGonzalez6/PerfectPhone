@@ -14,7 +14,8 @@
 
    /* boton inicio/registro */
    .btn-group a {
-     text-decoration: none;
+    text-align: center; 
+    text-decoration: none;
     background-color: white;
     color: black;
     width: 50%;
@@ -60,7 +61,7 @@
     position: absolute;
     right: 0;
     margin-top: 50px;
-    margin-right: 600px;
+    margin-right: 540px;
     max-width: 300px;
     padding: 16px;
     background-color: white;
