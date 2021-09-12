@@ -35,6 +35,8 @@ const model = {
             id: productos.length > 0 ? productos[productos.length -1].id + 1: 1,
             name: data.name,
             brand: parseInt(data.brand),
+            precio: data.precio,
+            descripcion: data.descripcion,
             colors: data.colors.map(color => parseInt(color)),
             image: file.filename
         }    
@@ -52,6 +54,8 @@ const model = {
             if(producto.id == id ){
                 producto.name = data.name
                 producto.brand = parseInt(data.brand)
+                producto.precio = data.precio
+                producto.descripcion = data.descripcion
                 producto.colors = data.colors.map(color => parseInt(color))
                 producto.image = file.filename;
                     

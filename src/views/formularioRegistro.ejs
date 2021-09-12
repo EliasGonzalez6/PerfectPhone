@@ -2,67 +2,48 @@
 <html lang="es">
   <%- include ("./layouts/head") %>    
   <body>
-  <%- include ("./layouts/header") %>
+  <%- include ("./layouts/header") %> -->
 <main>
 
-    <div class="bg-img">
-        <form action="/action_page.php" class="container">
-          <img src="/images/logo.jpg" class="logo2">
-          <div class="btn-group">
-            <a href="formularioUsuario">Inicia Sesión</a>
-            <a href="formularioRegistro">Registrate</a>
-          </div>
-          <p></p>       
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Email" name="email" required>
-      
-          <label for="psw"><b>Clave</b></label>
-          <input type="password" placeholder="Clave" name="psw" required>
-      
-          <button type="submit" class="btn">Registrate</button>
-          <a href="#"> Olvidaste tu clave? </a>
-          <p>
-          <p class="acceso-rapido">Acceso rápido con</p>
+  <form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Registrate</h1>
+      <p>Completa los campos para registrate.</p>
+      <hr>
+        
+      <label for="nombre y apellido"><b>Nombre y Apellido</b></label>
+      <input type="text" placeholder="Enter nombre y apellido" name="nombre" required>
 
-          <div class="iconos-registro">
-            <a href="#" class="fb"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="twitter"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="google"><i class="fab fa-google"></i></a>
-          </div>
-        </form>
-  </div>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Contraseña</b></label>
+      <input type="password" placeholder="Enter Contraseña" name="psw" required>
+  
+      <label for="categoria"><b>Categoria</b></label>
+      <select name="pais_x" id="pais_x">
+          <option>seleccioar</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+      </select> <br><br>
+
+      <label for="subir foto"><b>Subir foto</b></label>
+      <input type="file" id="foto_x" name="foto_x"><br><br>
+  
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recuerdame
+      </label>
+  
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Registrarse</button>
+      </div>
+    </div>
+  </form>
 
 </main>
 
-<footer>
-
-<div class="footer" id="footer">
-
-      <div class="footer-contacto">
-      <P>¿Dudas?</P>
-      <P>¿Preguntas</P>
-      <h4>¡CONTACTANOS!</h4>
-      <h4><i class="far fa-envelope"></i> Correo PerfectPhone@gmail.com</h4>
-      <h4><i class="fab fa-whatsapp"></i> Whatsapp 11-57215382</h4>
-      </div>
-
-            <div class="footer-redes">
-            <h4>SIGUENOS</h4>
-            <P>EN NUESTRAS REDES SOCIALES</P>
-            <p><a href="#"><i class="fab fa-facebook"></i>Facebook</a></p>
-            <p><a href="#"><i class="fab fa-instagram"></i>Instagram</a></p>
-            <p><a href="#"><i class="fab fa-twitter"></i></i>Twitter</a></p>
-            </div>
-
-      <div class="footer-derechos">
-      <img src="/images/logo.jpg" class="logo">
-      <p>Accesorios para dispositivos móviles</p>
-      <h6>Copyrigh Perfect Phone 2021</h6>
-    </div>
- 
-</div>
-
-</footer>
+<!-- <%- include ("./layouts/footer") %> --> -->
 
 </body>
 </html>

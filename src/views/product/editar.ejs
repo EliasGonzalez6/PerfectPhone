@@ -18,6 +18,10 @@
                         <h2><%= product.categoria %></h2>
                     </fieldset>
                     <fieldset>
+                        <label for="name">Precio</label>
+                        <input type="text" name="precio" id="precio" value="<%= product.precio %>" >
+                    </fieldset>
+                    <fieldset>
                         <label for="brand">Marca</label>
                         <select name="brand" id="brand">
                             <% brands.forEach(brand => { %>
@@ -41,6 +45,10 @@
                                 <% } %>
                             <% }) %>
                         </select>
+                    </fieldset>
+                    <fieldset>
+                        <label for="name">Descripción</label>
+                        <input type="text" name="descripcion" id="descripcion" value="<%= product.descripcion %>" >
                     </fieldset>
                     <fieldset>
                         <button type="submit">Send</button>

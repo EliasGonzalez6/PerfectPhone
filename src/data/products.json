@@ -1,13 +1,39 @@
 [
   {
-    "id": 5,
-    "name": "Demo C1",
+    "id": 6,
+    "name": "caja",
     "brand": 1,
     "colors": [
       1,
       2,
       3
     ],
-    "image": "image-1630974355316.jpg"
+    "image": "image-1631415969159.jpg",
+    "precio": "500",
+    "descripcion": "otro candado"
+  },
+  {
+    "id": 7,
+    "name": "samsung",
+    "brand": 1,
+    "precio": "800$",
+    "descripcion": "candado ",
+    "colors": [
+      1,
+      2
+    ],
+    "image": "image-1631414292910.jpg"
+  },
+  {
+    "id": 8,
+    "name": "caja",
+    "brand": 1,
+    "precio": "1500",
+    "descripcion": "cofre",
+    "colors": [
+      3,
+      4
+    ],
+    "image": "image-1631416530774.jpg"
   }
 ]
