@@ -3,13 +3,15 @@
   <%- include ("../layouts/head") %>    
   <body>
   <%- include ("../layouts/header") %>
-  <main class="col-12 col-s-12" style="display:block; clear:both; background-color:black; padding-top:10%; text-align:center; padding-bottom:10%;"">    
-    <div class="col-6 col-s-12" style="margin-left:25%; background-color:white; padding:20px; border-radius:10px;">
-            <% if (product.image) { %>
-                <figure><img src="/uploads/products/<%= product.image%>" alt="" style="width:30%"></figure>
+  <main class="col-12 col-s-12" style="display:block; clear:both; background-color:black; padding-top:10%; text-align:center; padding-bottom:10%; border: solid 3px red">    
+    <div class="col-6 col-s-12" style="width: 70%; margin-left:15%; background-color:white; padding:20px; border-radius:10px; display: inline-flex; border: solid 2px green">
+        <div>  
+        <% if (product.image) { %>
+                <figure><img src="/uploads/products/<%= product.image%>" alt="" style="width:50%" height="70%"></figure>
             <% } else { %>
                 <figure><img src="/images/default.jpg" alt=""></figure>
-            <% } %>        
+            <% } %>
+               
                 <h2><%= product.name %></h2>
                 <h2><%= product.precio %></h2>
                 <p><%= product.brand.name %></p>

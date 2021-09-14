@@ -1,5 +1,5 @@
 *{box-sizing: border-box;}
-  body {margin: 0; padding: 0; border: 0;}
+  body {margin: 0; padding: 0; border: 0; font-family: 'Roboto', sans-serif;}
   header {margin: 0; padding: 0; border: 0;}
   main {margin: 0; padding: 0; padding-top: 50px; border: 0;}
   footer {margin: 0; padding: 0; border: 0;}
@@ -144,7 +144,7 @@ padding: 6px;
 /* main */
 
 .main{
-  background-color: black;
+  background-color: white;
  }
  
 /* imagen corrediza */
@@ -186,16 +186,18 @@ height: 800px;
 }
 
 .titulo-producto{
- background-color: black;
+ background-color: white;
  color: rgb(160, 159, 159);
  font-family: 'Roboto', sans-serif;
- margin: 0 0%;
- padding: 100px 0px 50px 0px;
+ border: 0px;
+ padding: 90px 0px 50px 0px;
  text-align: center;
+ font-size: 25px;
 }
 
 .pantalla{
- background-color: black;
+ background-color: white;
+
 }
 
 /* columna de los productos */
@@ -230,7 +232,10 @@ height: 800px;
 #myVideo {
   width: 100%;
   height: 800px;
-  
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
 }
 
 /* footer */

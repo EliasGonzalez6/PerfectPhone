@@ -35,5 +35,17 @@
       4
     ],
     "image": "image-1631416530774.jpg"
+  },
+  {
+    "id": 9,
+    "name": "samsung",
+    "brand": 1,
+    "precio": "800$",
+    "descripcion": "ejemplo",
+    "colors": [
+      1,
+      2
+    ],
+    "image": "image-1631569199998.jpg"
   }
 ]
