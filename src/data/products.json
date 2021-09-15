@@ -1,51 +1,52 @@
 [
   {
-    "id": 6,
-    "name": "caja",
+    "id": 9,
+    "name": "samsung",
     "brand": 1,
+    "precio": "700",
+    "descripcion": "ejemplo1",
+    "colors": [
+      1,
+      2
+    ],
+    "image": "image-1631677959624.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Auricular ",
+    "brand": 1,
+    "precio": "600",
+    "descripcion": "ejemplo",
     "colors": [
       1,
       2,
       3
     ],
-    "image": "image-1631415969159.jpg",
-    "precio": "500",
-    "descripcion": "otro candado"
+    "image": "image-1631677813338.jpg"
   },
   {
-    "id": 7,
-    "name": "samsung",
+    "id": 11,
+    "name": "Auricular ",
     "brand": 1,
-    "precio": "800$",
-    "descripcion": "candado ",
-    "colors": [
-      1,
-      2
-    ],
-    "image": "image-1631414292910.jpg"
-  },
-  {
-    "id": 8,
-    "name": "caja",
-    "brand": 1,
-    "precio": "1500",
-    "descripcion": "cofre",
-    "colors": [
-      3,
-      4
-    ],
-    "image": "image-1631416530774.jpg"
-  },
-  {
-    "id": 9,
-    "name": "samsung",
-    "brand": 1,
-    "precio": "800$",
+    "precio": "700",
     "descripcion": "ejemplo",
     "colors": [
       1,
-      2
+      3,
+      4
     ],
-    "image": "image-1631569199998.jpg"
+    "image": "image-1631677873009.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Reloj",
+    "brand": 1,
+    "precio": "1.000",
+    "descripcion": "ejemplo",
+    "colors": [
+      2,
+      4
+    ],
+    "image": "image-1631677926996.jpg"
   }
 ]

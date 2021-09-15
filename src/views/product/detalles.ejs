@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include ("../layouts/head") %>    
-  <body>
-  <%- include ("../layouts/header") %>
-  <main class="col-12 col-s-12" style="display:block; clear:both; background-color:black; padding-top:10%; text-align:center; padding-bottom:10%; border: solid 3px red">    
-    <div class="col-6 col-s-12" style="width: 70%; margin-left:15%; background-color:white; padding:20px; border-radius:10px; display: inline-flex; border: solid 2px green">
-        <div>  
-        <% if (product.image) { %>
-                <figure><img src="/uploads/products/<%= product.image%>" alt="" style="width:50%" height="70%"></figure>
-            <% } else { %>
-                <figure><img src="/images/default.jpg" alt=""></figure>
-            <% } %>
-               
-                <h2><%= product.name %></h2>
-                <h2><%= product.precio %></h2>
-                <p><%= product.brand.name %></p>
-                <form action="/carrito" method="GET">
-                    <h2>Colors</h2>                    
-                    <fieldset>
-                    <% product.colors.forEach(color => { %>                        
+  <%- include ("../layouts/head") %>        
+    <body>
+        <%- include ("../layouts/header") %>
+        <main class="col-12 col-s-12" style=" display:block; clear:both; background-color: white; padding-top:10%; padding-bottom:5%;">    
+            <div class="col-6 col-s-12" style="width: 80%;background-color:white; margin-left:10%;">
+        
+                <div class="lado izquierdo" style=" float:left; width:60%; height:100%;">
+                    <% if (product.image) { %>
+       
+                 <figure><img src="/uploads/products/<%= product.image%>" alt="" style="width:100%; height:100%; margin-left:-40px; margin-top:-15px;"></figure>
+                    <% } else { %>
+                 <figure><img src="/images/default.jpg" alt=""></figure>
+                    <% } %>
+                </div>  
+                <div class="lado derecho" style=" float:right; width: 40%; text-align:center; margin-top:60px;">
+                        <p style="font-size: 25px;"><%= product.name %></p>
+                        <p style="font-size: 25px;">$ <%= product.precio %></p>
+                        <!-- <p><%= product.brand.name %></p> -->
+                    <form action="/carrito" method="GET">
+
+                        <!-- <fieldset> hace el cuadro -->
+                            <div style="text-align: left; margin-top: 10px;">            
+                            <p style="font-size: 20px">Color:</p>    
+                             <% product.colors.forEach(color => { %>                        
                             <input type="radio" name="color" required id="color-<%= color.id %>" value="<%= color.id %>"/>
                             <label for="color-<%= color.id %>">
                                 <%= color.name %>
                                 <span style="<%= `background-color:${color.value};`%> display: inline-block; width: 1rem; height:1rem" class="color"></span>
                             </label>                        
-                    <% }) %>                                        
-                        <label for="quantity">Quantity</label>
-                        <input type="number" min="1" max="3" value="1" required>
-                        <p><%= product.descripcion %></p>
-                        <button type="submit" style="margin-left: 10px;">comprar</button>                                        
-                </form>
-                <div style="clear: both"></div>
-                    <form action="/product/create" method="GET" style="display:in-line;" class="col-4 col-s-4">
-                        <button type="submit">Crear</button>
+                             <% }) %>
+                            
+                             <p style="font-size: 20px;"><label for="quantity" style=""> Cantidad:</label></p>
+                             <input type="number" min="1" max="3" value="1" required>
+                             <p style="font-size: 20px">Descripción:</p> 
+                             <p><%= product.descripcion %></p>
+                            </div>
+                                                                   
                     </form>
+                             <button type="submit" style="">Comprar</button>                      
+                             <div style="clear: both"></div>
+                            <form action="/product/create" method="GET" style="display:in-line;" class="col-4 col-s-4">
+                                <button type="submit">Crear</button>
+                            </form>
                     
-                    <a href="/product/edit/<%= product.id %>">Editar</a>                                           
+                            <form action="/product/edit/<%= product.id %>" method="GET" style="display:in-line;" class="col-4 col-s-4">
+                                <button type="submit">Editar</button>
+                            </form>
+
+                            <!-- <a href="/product/edit/<%= product.id %>">Editar</a> anterior enlace para editar                                            -->
                     
-                    <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display:in-line;" class="col-4 col-s-4">
-                        <button type="submit">Borrar</button>
-                    </form>
-                </fieldset>
+                            <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display:in-line;" class="col-4 col-s-4">
+                            <button type="submit">Borrar</button>
+                             </form>
+                
+                        <!-- </fieldset> hace el cuadro-->
+                </div>            
             </div>
-    </main>
-    <%- include ("../layouts/footer") %>
-</body>
+        </main>
+         <%- include ("../layouts/footer") %>
+    </body>
 </html>
