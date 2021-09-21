@@ -60,7 +60,7 @@
     font-family: 'Roboto', sans-serif;
     position: absolute;
     right: 0;
-    margin-top: 80px;
+    margin-top: 70px;
     margin-right: 540px;
     max-width: 300px;
     padding: 16px;
@@ -135,7 +135,7 @@
 /*la imagen */
 .bg-registro-img{
   background-image: url("/images/fondo usuario.jpg"); 
-  height: 830px;
+  height: 800px;
 
  /*Centra y escala la imagen de forma agradable*/
  background-position: center;
@@ -196,7 +196,7 @@ button:hover {
   width: 24%;
   background-color: white;
   margin-left: 560px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 /* Flotadores claros */
