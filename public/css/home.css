@@ -107,11 +107,12 @@ padding: 6px;
  margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+/* .navbar a:hover, .dropdown:hover .dropbtn {
  background-color: #5DADE2;
- color: black;  /*probar si esta funcionando*/
+ color: black; 
 }
-
+ */
+ 
 .dropdown-content {
  display: none;
  background-color: white;

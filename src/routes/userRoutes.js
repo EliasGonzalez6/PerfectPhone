@@ -4,11 +4,11 @@ const router = express.Router();
 const usersController = require('../controllers/userController')
 
 
-router.get("/formularioUsuario",usersController.formularioUsuario);
+router.get("/ingreso",usersController.formularioUsuario);
 
-router.get("/formularioRegistro",usersController.formularioRegistro);
+router.get("/registro",usersController.formularioRegistro);
 
-router.get("/perfilUsuario/:userId",usersController.perfilUsuario);
+router.get("/perfil/:userId",usersController.perfilUsuario);
 
 router.get("/carrito",usersController.carrito);
 
