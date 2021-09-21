@@ -4,10 +4,11 @@
   <body>
   <%- include ("./layouts/header") %> -->
 <main>
-
-  <form action="action_page.php" style="border:1px solid #ccc">
-    <div class="container">
-      <h1>Registrate</h1>
+  <div class="bg-registro-img"> 
+  <form action="action_page.php" style="padding-top: 40px;">
+    <div class="container-registro">
+      <img src="/images/logo.jpg" class="logo2" style="margin-left: 130px;">
+      <h1 class="titulo-registrate">Registrate</h1>
       <p>Completa los campos para registrate.</p>
       <hr>
         
@@ -29,6 +30,7 @@
       </select> <br><br>
 
       <label for="subir foto"><b>Subir foto</b></label>
+      <p></p>
       <input type="file" id="foto_x" name="foto_x"><br><br>
   
       <label>
@@ -40,10 +42,10 @@
       </div>
     </div>
   </form>
-
+</div> 
 </main>
 
-<!-- <%- include ("./layouts/footer") %> --> -->
+<%- include ("./layouts/footer") %>
 
 </body>
 </html>

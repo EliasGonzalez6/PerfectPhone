@@ -1,10 +1,9 @@
 
-  * {
-    box-sizing: border-box;
-  }
+  * {box-sizing: border-box;}
+   main {margin: 0; padding: 0; padding-top: 50px; border: 0;}
 
   .logo2{
-    width: 50px;
+   width: 50px;
    height: 50px;
    text-align: center;
    border-radius: 50px;
@@ -17,7 +16,7 @@
     text-align: center; 
     text-decoration: none;
     font-size: 17px;
-    background-color: #636363;;
+    background-color: #636363;
     color: white;
     width: 50%;
     padding: 10px;
@@ -40,12 +39,12 @@
   
   /* Agrega un color de fondo al pasar el mouse */
   .btn-group a:hover {
-    color: white;
+   color: white;
   }
   
   /* La imagen utilizada */
    .bg-img {
-     background-image: url("/images/prueba.jpg"); 
+     background-image: url("/images/fondo usuario.jpg"); 
   
     /* Controla la altura de la imagen */
     height: 650px;
@@ -91,11 +90,11 @@
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
+    opacity: 1;
   }
   
   .btn:hover {
-    opacity: 1;
+    opacity: 0.8;
   }
 
 .acceso-rapido{
@@ -131,8 +130,23 @@
   margin: 3px 5px;
 }
 
-/* css formulario de registro */
+/* css formulario de registro............................................................ */
 
+/*la imagen */
+.bg-registro-img{
+  background-image: url("/images/fondo usuario.jpg"); 
+  height: 830px;
+
+ /*Centra y escala la imagen de forma agradable*/
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ } 
+ 
+ .titulo-registrate{
+   color:#636363;
+   text-align: center;
+ }
 
 /*Campos de entrada de ancho completo */
   input[type=text], input[type=password] {
@@ -155,8 +169,7 @@ hr {
 }
 
 /*Establecer un estilo para todos los botones */
-button {
-  background-color: #04AA6D;
+button{
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -170,21 +183,20 @@ button:hover {
   opacity:1;
 }
 
-/*Estilos adicionales para el botón cancelar */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
 /* Botones flotantes de cancelación y registro y agregue un ancho igual */
-.cancelbtn, .signupbtn {
-  float: left;
+ .signupbtn {
+  margin-left: 80px;
   width: 50%;
+  background-color:#636363;
 }
 
 /* Agregar relleno a los elementos del contenedor */
-.container {
+.container-registro{
   padding: 16px;
+  width: 24%;
+  background-color: white;
+  margin-left: 560px;
+  margin-top: 30px;
 }
 
 /* Flotadores claros */
