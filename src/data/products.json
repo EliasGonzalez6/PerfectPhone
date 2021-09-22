@@ -48,5 +48,17 @@
       4
     ],
     "image": "image-1631677926996.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Auricular ",
+    "brand": 1,
+    "precio": "800",
+    "descripcion": "nuevo",
+    "colors": [
+      2,
+      3
+    ],
+    "image": "image-1632286727300.jpg"
   }
 ]

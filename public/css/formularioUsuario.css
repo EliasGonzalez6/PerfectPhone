@@ -16,7 +16,7 @@
     text-align: center; 
     text-decoration: none;
     font-size: 17px;
-    background-color: #636363;
+    background-color: gray;
     color: white;
     width: 50%;
     padding: 10px;
@@ -83,7 +83,7 @@
   
   /* Establecer un estilo para el botón enviar */
   .btn {
-    background-color: #636363;
+    background-color: gray;
     color: white;
     padding: 16px 20px;
     margin: 0 0 8px;
@@ -144,7 +144,7 @@
  } 
  
  .titulo-registrate{
-   color:#636363;
+   color: gray;
    text-align: center;
  }
 
@@ -187,7 +187,7 @@ button:hover {
  .signupbtn {
   margin-left: 80px;
   width: 50%;
-  background-color:#636363;
+  background-color:gray;
 }
 
 /* Agregar relleno a los elementos del contenedor */

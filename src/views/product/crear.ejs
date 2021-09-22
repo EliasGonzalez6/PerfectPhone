@@ -3,24 +3,37 @@
   <%- include ("../layouts/head") %>    
   <body>
   <%- include ("../layouts/header") %>
-    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%; text-align:center; padding-bottom:10%;">    
-        <div class="col-6 col-s-12" style="margin-left:25%; background-color:white; padding:20px; border-radius:10px;">
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;  padding-bottom:4%;">    
+        <div class="col-6 col-s-12" style="width: 25%; margin-left:35%; background-color: white; padding:20px; border: solid 2px gray">
             <form action="/product/save" method="post" id="create-form" enctype="multipart/form-data">
-                <fieldset>
-                    <label for="image">Image</label>
+                
+                <img src="/images/logo.jpg" class="logo2" style="margin: 5px; margin-bottom: 20px; margin-left: 130px;">
+                  
+                <h2 style="text-align: center; color: gray;">Crear producto</h2>
+                    <div>          
+                    <label for="image"><b style="font-size: 19px;">Imagen:</b></label>
+                    <br><br>
                     <input type="file" name="image" id="image">
-                </fieldset>
+                    </div>
+                    <br><br>
 
-                <fieldset>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
-                </fieldset>
-                <fieldset>
-                    <label for="precio">Precio</label>
-                    <input type="text" name="precio" id="precio">
-                </fieldset>
-            <fieldset>
-                <label for="brand">Brand</label>
+                    <div>
+                    <label for="name"><b style="font-size: 19px;">Nombre:</b></label>
+                    <input type="text" name="name" id="name" style="border: solid 1px gray;">
+                    </div>
+                
+                    <div>
+                    <label for="precio"><b style="font-size: 19px;">Precio:</b></label>
+                    <input type="text" name="precio" id="precio" style="border: solid 1px gray;">
+                    </div>
+                
+                    <div>
+                        <label for="descripcion"><b style="font-size: 19px;">Descripción:</b></label>
+                        <input type="text" name="descripcion" id="descripcion" style="border: solid 1px gray;">   
+                    </div>
+
+                <div>       
+                <label for="brand"><b style="font-size: 19px;">Marca</b></label>
                 <select name="brand" id="brand">
                     <option value="" selected disabled>Chouse One</option>
                     <% brands.forEach(brand => { %>
@@ -29,24 +42,26 @@
                         </option>
                     <% }) %>
                 </select>
-            </fieldset>
-            <fieldset>
-                <label for="colors">Colors</label>
-                <select name="colors" id="colors" multiple>
+                </div>   
+                 <br><br>
+                
+                <div>
+                <label for="colors"><b style="font-size: 19px;">Color:</b></label>
+                <p></p>
+                <div>
+                <select name="colors" id="colors" multiple>  <!--multiple (colocar al final despues de color) -->
                     <% colors.forEach(color => { %>
                         <option value="<%= color.id %>" style="<%= `background-color:${color.value};`%>">
                             <%= color.name %>
                         </option>
                     <% }) %>
                 </select>
-            </fieldset>
-            <fieldset>
-                <label for="descripcion">Descripcion</label>
-                <input type="text" name="descripcion" id="descripcion">
-            </fieldset>
-            <fieldset>
-                <button type="submit">Send</button>
-            </fieldset>
+                </div>
+                </div>
+                <p></p>        
+
+             <button type="submit" style="width: 30%; margin-left: 110px; background-color: gray;">Crear</button>
+            
             </form> 
         </div>
     </main>
