@@ -1,6 +1,16 @@
 [
     {
         "id": 1,
-        "name": "Brand 1"
+        "name": "Auriculares y Airpods"
+    },
+
+    {
+        "id": 2,
+        "name": "Aros de luz y Soportes"
+    },
+
+    {
+        "id": 3,
+        "name": "Relojes inteligentes"
     }
 ]

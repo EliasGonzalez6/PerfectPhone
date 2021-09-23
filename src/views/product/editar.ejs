@@ -3,38 +3,58 @@
   <%- include ("../layouts/head") %>    
     <body>
     <%- include ("../layouts/header") %>
-        <main class="col-12 col-s-12" style="display:block; clear:both; background-color: white; padding-top:10%; text-align:center; padding-bottom:10%;">    
-            <div class="col-6 col-s-12" style="margin-left:25%; background-color:white; padding:20px; border-radius:10px;">
+        <main class="col-12 col-s-12" style="display:block; clear:both; background-color: white; padding-top:10%; padding-bottom:4%;">    
+            <div class="col-6 col-s-12" style="width:25%; margin-left:35%; background-color:white; padding:20px; border: solid 1px gray">
 
                 <form action="/product/update/<%= product.id %>?_method=PATCH" method="post" id="edit-form" enctype="multipart/form-data">
-                    <fieldset>
+                    
+                    <img src="/images/logo.jpg" class="logo2" style="margin: 5px; margin-bottom: 20px; margin-left: 130px;">
+
+                    <h2 style="text-align: center; color: gray;">Editar producto</h2>
+
+                        <div>
                         <figure><img src="/uploads/productos/<%=product.image%>" alt="" style="width:30%"></figure>
-                        <label for="image">image</label>
+                        <label for="image"><b style="font-size: 19px;">Imagen</b></label>
+                        <br><br>
                         <input type="file" name="image" id="image">
-                    </fieldset>
-                    <fieldset>
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" value="<%= product.name %>" >
+                        </div>
+                        <br><br>
+
+                        <div>
+                        <label for="name"><b style="font-size: 19px;">Nombre</b></label>
+                        <input type="text" name="name" id="name" style="border: solid 1px gray;" value="<%= product.name %>">
                         <h2><%= product.categoria %></h2>
-                    </fieldset>
-                    <fieldset>
-                        <label for="name">Precio</label>
-                        <input type="text" name="precio" id="precio" value="<%= product.precio %>" >
-                    </fieldset>
-                    <fieldset>
-                        <label for="brand">Marca</label>
+                        </div>                  
+    
+                        <div>
+                        <label for="name"><b style="font-size: 19px;">Precio</b></label>
+                        <input type="text" name="precio" id="precio" style="border: solid 1px gray;" value="<%= product.precio %>">
+                        </div>
+
+                            <div>
+                            <label for="name"><b style="font-size: 19px;">Descripción</b></label>
+                            <input type="text" name="descripcion" id="descripcion" style="border: solid 1px gray" value="<%= product.descripcion %>" >
+                            </div>
+    
+
+                        <div>
+                        <label for="brand"><b style="font-size: 19px;">Categoria</b></label>
                         <select name="brand" id="brand">
+                            <option value="" selected disabled>Seleccionar</option>
                             <% brands.forEach(brand => { %>
                                 <% if (product.brand.id == brand.id) { %>
-                                    <option value="<%= brand.id %>" selected><%= brand.name %></option>
+                                    <option value="<%= brand.id %>"><%= brand.name %></option>
                                 <% } else { %>
                                     <option value="<%= brand.id %>"><%= brand.name %></option>
                                 <% } %>
                             <% }) %>
                         </select>
-                    </fieldset>
-                    <fieldset>
-                        <label for="colors">Colors</label>
+                        </div>
+                         <br><br>
+
+                        <div>
+                        <label for="colors"><b style="font-size: 19px;">Color</b></label>
+                        <p></p>
                         <select name="colors" id="colors" multiple>
                             <% colors.forEach(color => { %>
                                 <% let match = product.colors.filter(productColor => productColor.id == color.id) %>
@@ -45,18 +65,16 @@
                                 <% } %>
                             <% }) %>
                         </select>
-                    </fieldset>
-                    <fieldset>
-                        <label for="name">Descripción</label>
-                        <input type="text" name="descripcion" id="descripcion" value="<%= product.descripcion %>" >
-                    </fieldset>
-                    <fieldset>
-                        <button type="submit">Send</button>
-                    </fieldset>
+                        </div>
+                        <p></p>
+
+                       <button type="submit" style="width: 30%; margin-left: 110px; background: gray;">Editar</button>
+                    
                 </form> 
             </div>  
         </main>
-    </body>
-</html>
+
+        <%- include ("../layouts/footer") %>
+
 </body>
 </html>

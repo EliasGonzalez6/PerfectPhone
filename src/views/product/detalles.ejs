@@ -13,15 +13,29 @@
                     <% } else { %>
                  <figure><img src="/images/default.jpg" alt=""></figure>
                     <% } %>
-                </div>  
-                <div class="lado derecho" style=" float:right; width: 40%; text-align:center; margin-top:60px;">
+                    <p style="margin-top: 100px; font-size: 20px; color: gray;"><b>Información sobre Perfect Phone</b></p>
+                    <p style="font-size: 18px;"><i class="fas fa-map-marker-alt" style="color: dodgerblue;"></i> Ubicacion Palermo, Capital Federal</p>
+                    <p style="font-size: 18px;"><i class="fas fa-check-circle" style="color: dodgerblue;"></i> Brinda buena atención</p>                
+                    <p style="font-size: 18px;"><i class="fas fa-dollar-sign" style="color: dodgerblue;"></i> Ofrece súper descuentos</p>
+                </div>
+
+                <div class="lado derecho" style=" float:right; width: 40%; margin-top:20px;">
                         <p style="font-size: 25px;"><%= product.name %></p>
                         <p style="font-size: 25px;">$ <%= product.precio %></p>
                         <!-- <p><%= product.brand.name %></p> -->
                     <form action="/carrito" method="GET">
+                         
+                        <div>
+                        <p>Calificación de estrellas</p>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        </div> 
 
                         <!-- <fieldset> hace el cuadro -->
-                            <div style="text-align: left; margin-top: 10px;">            
+                            <div style="margin-top: 10px;">            
                             <p style="font-size: 20px">Color:</p>    
                              <% product.colors.forEach(color => { %>                        
                             <input type="radio" name="color" required id="color-<%= color.id %>" value="<%= color.id %>"/>
@@ -38,25 +52,39 @@
                             </div>
                                                                    
                     </form>
-                             <button type="submit" style="">Comprar</button>                      
-                             <div style="clear: both"></div>
+                             <button type="submit" style="width:100%; margin-top:30px; margin-bottom:40px; padding:14px; border-radius:10px; background-color: dodgerblue;">Comprar</button>                      
+                              
+                             <p style=" font-size: 20px;">Información de la compra</p>
+                             <p style="color: green; font-size: 18px;"><i class="fas fa-shipping-fast"></i> Llega mañana </p>
+                             <p style="color: green; font-size: 18px;"><i class="fas fa-reply"></i> Devolucion GRATIS</p>  
+                             <p style="">Tenés 30 dias desde que los recibís</p>
+                             <br>
+                             <p style="font-size: 18px; color: dodgerblue;"><i class="fas fa-user-shield"></i> Compra protegida</p>
+                             <p>En Perfect Phone tenés seguridad en tus compras</p>
+                             <p style="font-size: 18px; color: dodgerblue;"><i class="fas fa-credit-card"></i> Medios de pago accesible</p>
+                             <p> Podés pagar con tarjeta o efectivo</p>
+
+                             <!-- <div style="clear: both;"></div> -->
+                             <div style="margin-top: 40px;">
                             <form action="/product/create" method="GET" style="display:in-line;" class="col-4 col-s-4">
-                                <button type="submit">Crear</button>
+                                <button type="submit" style="background-color: gray;">Crear</button>
                             </form>
                     
                             <form action="/product/edit/<%= product.id %>" method="GET" style="display:in-line;" class="col-4 col-s-4">
-                                <button type="submit">Editar</button>
+                                <button type="submit" style="background-color: gray;">Editar</button>
                             </form>
 
                             <!-- <a href="/product/edit/<%= product.id %>">Editar</a> anterior enlace para editar                                            -->
                     
                             <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display:in-line;" class="col-4 col-s-4">
-                            <button type="submit">Borrar</button>
+                            <button type="submit" style="background-color: gray;">Borrar</button>
                              </form>
+                             </div>
                 
                         <!-- </fieldset> hace el cuadro-->
                 </div>            
             </div>
+        
         </main>
          <%- include ("../layouts/footer") %>
     </body>

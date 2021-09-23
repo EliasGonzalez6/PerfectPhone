@@ -10,32 +10,33 @@
                 <img src="/images/logo.jpg" class="logo2" style="margin: 5px; margin-bottom: 20px; margin-left: 130px;">
                   
                 <h2 style="text-align: center; color: gray;">Crear producto</h2>
+                    
                     <div>          
-                    <label for="image"><b style="font-size: 19px;">Imagen:</b></label>
+                    <label for="image"><b style="font-size: 19px;">Imagen</b></label>
                     <br><br>
                     <input type="file" name="image" id="image">
                     </div>
                     <br><br>
 
                     <div>
-                    <label for="name"><b style="font-size: 19px;">Nombre:</b></label>
+                    <label for="name"><b style="font-size: 19px;">Nombre</b></label>
                     <input type="text" name="name" id="name" style="border: solid 1px gray;">
                     </div>
                 
                     <div>
-                    <label for="precio"><b style="font-size: 19px;">Precio:</b></label>
+                    <label for="precio"><b style="font-size: 19px;">Precio</b></label>
                     <input type="text" name="precio" id="precio" style="border: solid 1px gray;">
                     </div>
                 
                     <div>
-                        <label for="descripcion"><b style="font-size: 19px;">Descripción:</b></label>
+                        <label for="descripcion"><b style="font-size: 19px;">Descripción</b></label>
                         <input type="text" name="descripcion" id="descripcion" style="border: solid 1px gray;">   
                     </div>
 
                 <div>       
-                <label for="brand"><b style="font-size: 19px;">Marca</b></label>
+                <label for="brand"><b style="font-size: 19px;">Categoria</b></label>
                 <select name="brand" id="brand">
-                    <option value="" selected disabled>Chouse One</option>
+                    <option value="" selected disabled>Seleccionar</option>
                     <% brands.forEach(brand => { %>
                         <option value="<%= brand.id %>">
                             <%= brand.name %>
@@ -46,9 +47,8 @@
                  <br><br>
                 
                 <div>
-                <label for="colors"><b style="font-size: 19px;">Color:</b></label>
+                <label for="colors"><b style="font-size: 19px;">Color</b></label>
                 <p></p>
-                <div>
                 <select name="colors" id="colors" multiple>  <!--multiple (colocar al final despues de color) -->
                     <% colors.forEach(color => { %>
                         <option value="<%= color.id %>" style="<%= `background-color:${color.value};`%>">
@@ -56,7 +56,6 @@
                         </option>
                     <% }) %>
                 </select>
-                </div>
                 </div>
                 <p></p>        
 
