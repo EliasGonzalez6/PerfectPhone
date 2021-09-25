@@ -51,14 +51,14 @@
   },
   {
     "id": 13,
-    "name": "Auricular ",
-    "brand": 1,
-    "precio": "700",
+    "name": "reloj",
+    "brand": 3,
+    "precio": "600",
     "descripcion": "nuevo",
     "colors": [
       1,
       2
     ],
-    "image": "image-1632375112874.jpg"
+    "image": "image-1632452749962.jpg"
   }
 ]

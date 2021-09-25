@@ -4,7 +4,12 @@
   <body>
   <%- include ("../layouts/header") %>
     <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:15%;">
-    <!--<section id="list-products">-->
+    
+        <div id="carritoFlotante" class="carrito">
+            <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+          </div>
+
+        <!--<section id="list-products">-->
          <% list.forEach(product => { %>                  
             <a href="/product/<%= product.id %>"> 
             <div  class="col-4 col-s-12" style="padding: 20px; width: 25%;">          
