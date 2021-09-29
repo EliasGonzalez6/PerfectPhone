@@ -257,6 +257,10 @@ height: 800px;
  text-align: center;
 }
 
+.producto-home:hover{
+  opacity: 0.6;
+}
+
 /* Diseñe el video: 100% de ancho y alto para cubrir toda la ventana*/
 #myVideo {
   width: 100%;
