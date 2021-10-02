@@ -14,23 +14,60 @@
                     <div>          
                     <label for="image"><b style="font-size: 19px;">Imagen</b></label>
                     <br><br>
-                    <input type="file" name="image" id="image">
+                    <input 
+                    type="file" 
+                    name="image" 
+                    id="image"
+                    >
+                    <p></p>
+                    <% if (locals.errors && errors.image) { %>
+                        <p class="errortexto"> <%= errors.image.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                        <% } %>
                     </div>
-                    <br><br>
+                   
 
                     <div>
                     <label for="name"><b style="font-size: 19px;">Nombre</b></label>
-                    <input type="text" name="name" id="name" style="border: solid 1px gray;">
+                    <input 
+                    type="text" 
+                    name="Name" 
+                    placeholder="Enter nombre"
+                    value="<%= locals.oldData ? oldData.Name : null %>"
+                    id="<%= locals.errors && errors.Name ? 'error' : null %>"
+                    >
+                    <% if (locals.errors && errors.Name) { %>
+                        <p class="errortexto"> <%= errors.Name.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                        <% } %>
                     </div>
+                    
                 
                     <div>
                     <label for="precio"><b style="font-size: 19px;">Precio</b></label>
-                    <input type="text" name="precio" id="precio" style="border: solid 1px gray;">
-                    </div>
+                    <input 
+                    type="text" 
+                    name="precio" 
+                    placeholder="Enter Precio"
+                    value="<%= locals.oldData ? oldData.precio : null %>"
+                    id="<%= locals.errors && errors.precio ? 'error' : null %>"
+                    >
+                    <% if (locals.errors && errors.precio) { %>
+                        <p class="errortexto"> <%= errors.precio.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                        <% } %>
                 
+                    </div>
+                   
                     <div>
                         <label for="descripcion"><b style="font-size: 19px;">Descripción</b></label>
-                        <input type="text" name="descripcion" id="descripcion" style="border: solid 1px gray;">   
+                        <input 
+                        type="text" 
+                        name="descripcion" 
+                        placeholder="Enter Descripción"
+                         value="<%= locals.oldData ? oldData.descripcion : null %>"
+                         id="<%= locals.errors && errors.descripcion ? 'error' : null %>"
+                        >   
+                        <% if (locals.errors && errors.descripcion) { %>
+                            <p class="errortexto"> <%= errors.descripcion.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                            <% } %>
                     </div>
 
                 <div>       
@@ -43,6 +80,10 @@
                         </option>
                     <% }) %>
                 </select>
+                <p></p>
+                <% if (locals.errors && errors.brand) { %>
+                    <p class="errortexto"> <%= errors.brand.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>
                 </div>   
                  <br><br>
                 
@@ -56,6 +97,10 @@
                         </option>
                     <% }) %>
                 </select>
+                <p></p>
+                <% if (locals.errors && errors.colors) { %>
+                    <p class="errortexto"> <%= errors.colors.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>
                 </div>
                 <p></p>        
 

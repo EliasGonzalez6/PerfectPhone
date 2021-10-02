@@ -5,22 +5,53 @@
   <%- include ("./layouts/header") %> -->
 <main>
   <div class="bg-registro-img"> 
-  <form action="action_page.php" style="padding-top: 20px;">
+  <form method="POST" action="/user/register" enctype="multipart/form-data" style="padding-top: 20px;">
     <div class="container-registro">
       <img src="/images/logo.jpg" class="logo2" style="margin-left: 130px;">
       <h2 class="titulo-registrate">Registrate</h2>
       <p>Completa los campos para registrate.</p>
       <hr>
-        
+     
+      <!-- nombre y apellido  -->
       <label for="nombre y apellido"><b>Nombre y Apellido</b></label>
-      <input type="text" placeholder="Enter nombre y apellido" name="nombre" required>
-
+      <input 
+      type="text" 
+      name="fullName"
+      placeholder="Enter nombre y apellido"
+      value="<%= locals.oldData ? oldData.fullName : null %>"
+      id="<%= locals.errors && errors.fullName ? 'error' : null %>"
+      >
+    <% if (locals.errors && errors.fullName) { %>
+      <p class="errortexto"> <%= errors.fullName.msg %> <i class="fas fa-exclamation-circle"></i></p>
+      <% } %>
+      
+      <!--email  -->
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input 
+      type="text" 
+      placeholder="Enter Email" 
+      name="email"
+      value="<%= locals.oldData ? oldData.email : null %>"
+      id="<%= locals.errors && errors.email ? 'error' : null %>"
+      >
+    <% if (locals.errors && errors.email) { %>
+      <p class="errortexto"> <%= errors.email.msg %> <i class="fas fa-exclamation-circle"></i></p>
+      <% } %>
   
+      <!--comtraseña -->
       <label for="psw"><b>Contraseña</b></label>
-      <input type="password" placeholder="Enter Contraseña" name="psw" required>
-  
+      <input 
+      type="password" 
+      placeholder="Enter Contraseña" 
+      name="password"
+      value="<%= locals.oldData ? oldData.password : null %>"
+      id="<%= locals.errors && errors.password ? 'error' : null %>"
+      >
+    <% if (locals.errors && errors.password) { %>
+      <p class="errortexto"> <%= errors.password.msg %> <i class="fas fa-exclamation-circle"></i></p>
+      <% } %>
+
+      <!--Categoria -->
       <label for="categoria"><b>Categoria</b></label>
       <select name="pais_x" id="pais_x">
           <option>seleccionar</option>
@@ -28,10 +59,17 @@
           <option>2</option>
           <option>3</option>
       </select> <br><br>
-
+      <% if (locals.errors && errors.categoria) { %>
+        <p class="errortexto"> <%= errors.categoria.msg %> <i class="fas fa-exclamation-circle"></i></p>
+        <% } %>
+  
+      <!--subir foto-->
       <label for="subir foto"><b>Subir foto</b></label>
       <p></p>
-      <input type="file" id="foto_x" name="foto_x"><br><br>
+      <input type="file" id="foto_x" name="avatar"><br><br>
+      <% if (locals.errors && errors.avatar) { %>
+        <p class="errortexto"> <%= errors.avatar.msg %> <i class="fas fa-exclamation-circle"></i></p>
+        <% } %>
   
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recuerdame

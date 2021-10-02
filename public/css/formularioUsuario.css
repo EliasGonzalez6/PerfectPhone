@@ -212,3 +212,13 @@ button:hover {
     width: 100%;
   }
 }
+
+/* error usuario css */
+
+#error{
+  border: solid 1px red;
+}
+.errortexto{
+  color: red;
+  margin-top: -15px;
+}
