@@ -25,8 +25,8 @@ module.exports = function(sequelize, dataTypes){
 
     let Brand = sequelize.define(alias, cols, config);
 
-    Brand.associate = (models) => {
-        Brand.hasmany(models.Product, {
+    Brand.associate = function(models) {
+        Brand.hasMany(models.Product, {
             as:"products",
             foreignKey:"brand"
         })

@@ -44,14 +44,12 @@ module.exports = function(sequelize, dataTypes){
 
     let Saledetail = sequelize.define(alias, cols, config);
 
-    Saledetail.associate = (models) => {
+    Saledetail.associate = function(models) {
        
         Saledetail.belongsTo(models.Sale, {
             as:"saledetails",
             foreignKey:"sale"
-        }),
-
-        Saledetail.belongsTo(models.Product, {
+        }),(models.Product, {
             as:"saledetails",
             foreignKey:"product"
         })

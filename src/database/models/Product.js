@@ -51,9 +51,9 @@ module.exports = function(sequelize, dataTypes){
 
     let Product = sequelize.define(alias, cols, config);
 
-    Product.associate = (models) => {
+    Product.associate = function(models) {
         
-        Product.hasmany(models.Saledetail, {
+        Product.hasMany(models.Saledetail, {
             as:"saledetails",
             foreignKey:"product"
         }),
@@ -61,9 +61,7 @@ module.exports = function(sequelize, dataTypes){
         Product.belongsTo(models.Brand, {
             as:"products",
             foreignKey:"brand"
-        }),
-
-        Product.belongsTo(models.Category, {
+        }),(models.Category, {
             as:"products",
             foreignKey:"category"
         })

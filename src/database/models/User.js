@@ -38,13 +38,13 @@ module.exports = function(sequelize, dataTypes){
 
     let User = sequelize.define(alias, cols, config);
 
-    User.associate = (models) => {
+    User.associate =function(models) {
         User.belongsTo(models.Rol, {
             as:"users",
             foreignKey:"rol"
         }),
 
-        User.hasmany(models.Sale, {
+        User.hasMany(models.Sale, {
             as:"sales",
             foreignKey:"user"
         })

@@ -42,8 +42,8 @@ module.exports = function(sequelize, dataTypes){
 
     let Sale = sequelize.define(alias, cols, config);
 
-    Sale.associate = (models) => {
-        Sale.hasmany(models.Saledetail, {
+    Sale.associate = function(models) {
+        Sale.hasMany(models.Saledetail, {
             as:"saledetails",
             foreignKey:"sale"
         }),
