@@ -38,9 +38,11 @@ app.use(method("_method")) // ?_method=PUT
 const main = require('./routes/main');
 app.use(main);
 
+const category = require('./routes/category');
+app.use("/category",category);
 
 const product = require('./routes/product');
-app.use("/product",product)
+app.use("/product",product);
 
 const userRoutes = require('./routes/userRoutes');
-app.use("/user",userRoutes)
+app.use("/user",userRoutes);
