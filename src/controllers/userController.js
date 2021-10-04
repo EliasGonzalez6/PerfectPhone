@@ -21,6 +21,7 @@ const controller = {
 		
 		let userInDB = User.findByField('email', req.body.email);
 
+		
 		if (userInDB) {
 			return res.render('formularioRegistro', {
 				errors: {
