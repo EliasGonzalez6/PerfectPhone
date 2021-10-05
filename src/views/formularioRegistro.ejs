@@ -52,16 +52,16 @@
       <% } %>
 
       <!--Categoria -->
-      <label for="categoria"><b>Categoria</b></label>
-      <select name="pais_x" id="pais_x">
+       <label for="categoria"><b>Categoria</b></label>
+      <select name="categoria" id="pais_x">
           <option>seleccionar</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
       </select> <br><br>
-      <% if (locals.errors && errors.categoria) { %>
+       <% if (locals.errors && errors.categoria) { %>
         <p class="errortexto"> <%= errors.categoria.msg %> <i class="fas fa-exclamation-circle"></i></p>
-        <% } %>
+        <% } %> 
   
       <!--subir foto-->
       <label for="subir foto"><b>Subir foto</b></label>

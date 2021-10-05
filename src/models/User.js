@@ -1,9 +1,9 @@
 // 4. Editar la información de un usuario
-
+const path = require('path');
 const fs = require('fs');
 
 const User = {
-	fileName: './data/users.json',
+	fileName: path.resolve(__dirname,"../data","users.json"),
 
 	getData: function () {
 		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
@@ -20,7 +20,7 @@ const User = {
 
 	findAll: function () {
 		return this.getData();
-	},
+	 },
 
 	findByPk: function (id) {
 		let allUsers = this.findAll();
