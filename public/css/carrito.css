@@ -35,10 +35,11 @@
   .boton-eliminar-comprar a{
     margin-left: 110px;
     padding: 5px;
+    font-size: 18px;
+  }
+
+  .boton-carrito-comprar{
     border: solid 4px dodgerblue ;
     background-color: dodgerblue;
     border-radius: 5px;
-    font-size: 18px;
-    color: white;
   }
-
