@@ -66,6 +66,8 @@ ___
 
 ___
 ### **Nuestro logo**
+Isologos: es el resultado de la unión del logotipo y el isotipo, pero en este caso las dos partes que lo componen son indivisibles. No lograrían funcionar por separado.
+
 <img src="public/images/logo formulario.jpg" style="width: 30% ">
 
 ___
