@@ -65,4 +65,8 @@ ___
 - **Gris**
 
 ___
+### **Nuestro logo**
+<img src="public/images/logo formulario.jpg" style="width: 30% ">
+
+___
 ### **Gracias por leer hasta acá.**
