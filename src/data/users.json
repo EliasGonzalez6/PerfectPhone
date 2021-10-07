@@ -1,28 +1,11 @@
 [
  {
   "id": 1,
-  "fullName": "Elias Gonzalez",
+  "fullName": "sheldom",
   "email": "moriancumer6@gmail.com",
-  "password": "$2a$10$FCRsGlHVG2Ekv1lGjDucvOkGVf/mLos0hgUcnDPh/9hPEgCugTUu6",
-  "remember": "on",
-  "avatar": "1633410655332_img.jpg"
- },
- {
-  "id": 2,
-  "fullName": "Elias Gonzalez",
-  "email": "eliasmorian.gonzalez.77@facebook.com",
-  "password": "$2a$10$.UU.UBPYNxjuouyoRnITBOfe2lJ6G6XLuJrO9u.6snXevUvboKNla",
+  "password": "$2a$10$WiIDXNI7uCk820IKq9qiieqf6VYj3l6Hc4P4R5EZxmjogLCqo/aCm",
   "categoria": "1",
   "remember": "on",
-  "avatar": "1633411022686_img.jpg"
- },
- {
-  "id": 3,
-  "fullName": "Elias Gonzalez",
-  "email": "luisrodrigueztrabajo892@gmail.com",
-  "password": "$2a$10$/pJZJJpRUtNcgR4D9.qnOO7xEDLSC/2DCPdVorTNJM5yQgFsRbMIi",
-  "categoria": "1",
-  "remember": "on",
-  "avatar": "1633411731307_img.jpg"
+  "avatar": "1633574329224_img.jpg"
  }
 ]
