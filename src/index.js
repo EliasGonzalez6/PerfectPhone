@@ -2,10 +2,10 @@ const express = require('express');
 const path = require('path');
 const method = require('method-override');
 const app = express();
-const cookies = require('cookie-parser');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 
-//const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.use(session({
 	secret: "Shhh, It's a secret",
@@ -15,7 +15,8 @@ app.use(session({
 
 app.use(cookies());
 
-//app.use(userLoggedMiddleware);
+app.use(userLoggedMiddleware);
+
 
 /* Servidor */
 app.set("port", process.env.PORT || 3000);

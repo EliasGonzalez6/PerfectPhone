@@ -7,5 +7,22 @@
   "categoria": "1",
   "remember": "on",
   "avatar": "1633574329224_img.jpg"
+ },
+ {
+  "id": 2,
+  "fullName": "Penny",
+  "email": "wendy.torres.19ee@gmail.com",
+  "password": "$2a$10$6/tcSgZ6kzc61/VboS8FRuSHF4sT7DYsuzhYsUlCVryYf23PTRVsG",
+  "categoria": "1",
+  "remember": "on",
+  "avatar": "1633741223400_img.jpg"
+ },
+ {
+  "id": 3,
+  "fullName": "john snow",
+  "email": "jhonsnow@gmail.com",
+  "password": "$2a$10$5JeWmjiP8WgyaS6/Ylk5BelYijg/6MzjbsYP1ytpV8ddl.7EF4P7y",
+  "categoria": "1",
+  "avatar": "1633753482677_img.jpg"
  }
 ]

@@ -18,10 +18,8 @@
         </div>
          -->     
         <a href="#footer"><i class="fa fa-fw fa-envelope"></i> Contactos</a>
-        <a href="/user/login"><i class="fa fa-fw fa-user"></i> Ingresar</a>
-         <!-- <a href="/user/carrito"><i class="fas fa-shopping-cart"></i> Mis compras</a> -->
-         <!--<a href="/colores"><i class="fas fa-cog" style="font-size: 20px;"></i></a>-->
-
+        <!-- <a href="/user/login"><i class="fa fa-fw fa-user"></i> Ingresar</a> -->
+      
         <div class="dropdown">
           <a class="enlace-menu"><i class="fa fa-cog"></i></a>
           <div class="dropdown-content">
@@ -29,13 +27,17 @@
             <a href="/category/create">Categoria</a>            
           </div>       
         </div>
-
+        <% if (locals.isLogged) { %>
         <div class="dropdown">
-          <a class="enlace-menu"> <img src="/images/avatars/1633574329224_img.jpg" width="40" style="border-radius: 100%;"> Hola  <i class="fa fa-caret-down"></i></a>
+          <a class="enlace-menu"> <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;"> 
+            Hola, <%= locals.userLogged.fullName %> <i class="fa fa-caret-down"></i></a>
           <div class="dropdown-content">
-            <a href="#">Mi Perfil</a>
-            <a href="#">Cerrar Sesión</a>
+            <a href="/user/profile">Mi Perfil</a>
+            <a href="/user/logout">Cerrar Sesión</a>
           </div>       
-        </div>    
+        </div> 
+        <% } else { %> 
+          <a href="/user/login"><i class="fa fa-fw fa-user"></i> Ingresar</a>  
+        <% } %>
   </div>
 </header>

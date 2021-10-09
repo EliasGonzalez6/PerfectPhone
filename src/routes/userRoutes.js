@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 const path = require('path');
 
 const usersController = require('../controllers/userController')
@@ -12,7 +11,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 //formulario de registro
-router.get("/register", guestMiddleware, usersController.register);
+router.get("/register", usersController.register);
 
 //procesar el registro
 router.post("/register", uploadFile.single('avatar'), validations, usersController.processRegister);

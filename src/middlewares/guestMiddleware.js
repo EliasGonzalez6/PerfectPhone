@@ -1,5 +1,5 @@
 function guestMiddleware(req, res, next) {
-	if (req.session.perfilUsuario) {
+	if (req.session.userLogged) {
 		return res.redirect('/user/profile');
 	}
 	next();
