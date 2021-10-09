@@ -2,11 +2,11 @@
 <html lang="es">
   <%- include ("./layouts/head") %>    
   <body>
-  <%- include ("./layouts/header") %> -->
+  <%- include ("./layouts/header") %>
 <main>
 
     <div class="bg-img">
-        <form action="/action_page.php" class="container">
+        <form method="POST" action="/user/login" class="container">
           <img src="/images/logo formulario.jpg" class="logo2">
           <div class="btn-group">
             <a href="/user/login">Inicia Sesión</a>
@@ -14,10 +14,19 @@
           </div>
           <p></p>       
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Email" name="email" required>
+          <input 
+          type="text" 
+          placeholder="Email" 
+          name="email"
+          value="<%= locals.oldData ? oldData.email : null %>"
+          id="<%= locals.errors && errors.email ? 'error' : null %>"
+          >
+          <% if (locals.errors && errors.email) { %>
+            <p class="errortexto"> <%= errors.email.msg %> <i class="fas fa-exclamation-circle"></i></p>
+            <% } %>
       
           <label for="psw"><b>Clave</b></label>
-          <input type="password" placeholder="Clave" name="psw" required>
+          <input type="password" placeholder="Clave" name="password">
       
           <button type="submit" class="btn">Iniciar Sesión</button>
           <a href="#"> Olvidaste tu clave? </a>
