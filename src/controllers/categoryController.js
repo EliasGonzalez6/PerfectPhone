@@ -1,13 +1,18 @@
-const db = require("../database/models/index");
+const express = require("express");
+const router = express.Router();
+const path = require("path");
+const category = require('../models/category');
+const db = require("../database/models");
 
 const categoryController = {
-
-    create: (req, res) => {
-        db.Category.findByPk(req.params.id)
-            .then(function(categories){
-            res.render("category/crear")
-        })
+    
+    listado: function(req, res){
+        db.Category.findAll()
+            .then(function (categories) {
+                res.render("category/lista", {categories: categories})
+            })
     },
+    
 };
 
 module.exports = categoryController;

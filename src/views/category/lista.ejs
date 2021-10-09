@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+  <body>
+  
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 50%;          
+          /*border: 1px black;*/
+          margin-left: 25%;
+        }
+        
+        td, th {
+          /*border: 1px solid black;*/
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>
+
+  <%- include ("../layouts/header") %>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;">
+    
+        <div id="carritoFlotante" class="carrito">
+            <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+        </div>
+        
+        <table style="margin-bottom:50px;">
+            <tr>
+                <td colspan="3" style="text-align: right;">        
+                        <a href="#"><i class="fa fa-plus" style="color: darkgreen;"></i></a>                    
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3" style="text-align: center;"><h2>LISTA DE CATEGORIAS</h2></th>
+            </tr>
+            <tr>
+                <th style="text-align: center;"><h3>Nombre</h3></th>
+                <th style="text-align: center;"><h3>Detalle</h3></th>
+                <th style="text-align: center;"><h3>Acciones</h3></th>
+            </tr>
+            <% for (let i = 0; i < categories.length; i++){ %>                            
+                <tr>                            
+                    <td style="text-align: center"; >
+                        <p><%= categories[i].name %></p>                      
+                    </td>                            
+                    <td style="text-align: center"; >
+                        <p><%= categories[i].detail %></p>
+                    </td>   
+                    <td style="text-align: center";>
+                        <a href="#"><i class="fa fa-edit" style="color: darkblue; margin-right:10px;"></i></a>
+                        <a href="#"><i class="fa fa-trash" style="color: darkred;"></i></a>
+                    </td>
+                </tr>                                 
+            <% } %>
+        </table>        
+    
+    <%- include ("../layouts/footer") %>
+    </main>
+</body>
+</html>
+
+
