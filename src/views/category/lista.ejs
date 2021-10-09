@@ -33,7 +33,7 @@
         <table style="margin-bottom:50px;">
             <tr>
                 <td colspan="3" style="text-align: right;">        
-                        <a href="#"><i class="fa fa-plus" style="color: darkgreen;"></i></a>                    
+                        <a href="category/create"><i class="fa fa-plus" style="color: darkgreen;"></i></a>                    
                 </td>
             </tr>
             <tr>
@@ -53,8 +53,8 @@
                         <p><%= categories[i].detail %></p>
                     </td>   
                     <td style="text-align: center";>
-                        <a href="#"><i class="fa fa-edit" style="color: darkblue; margin-right:10px;"></i></a>
-                        <a href="#"><i class="fa fa-trash" style="color: darkred;"></i></a>
+                        <a href="category/update/<%= categories[i].id %>"><i class="fa fa-edit" style="color: darkblue; margin-right:10px;"></i></a>
+                        <a href="category/delete/<%= categories[i].id %>"><i class="fa fa-trash" style="color: darkred;"></i></a>
                     </td>
                 </tr>                                 
             <% } %>

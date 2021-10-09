@@ -12,6 +12,12 @@ const categoryController = {
                 res.render("category/lista", {categories: categories})
             })
     },
+
+    create: (req,res) => res.render("category/crear"),
+
+    update: (req,res) => res.render("category/editar"),
+
+    delete: (req,res) => res.render("category/editar"),
     
 };
 
