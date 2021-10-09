@@ -3,12 +3,43 @@
   header {margin: 0; padding: 0; border: 0;}
   footer {margin: 0; padding: 0; border: 0;}
 
-  .titulo-carrito{
-    height: 550px;
-    margin-top: 40px;
-    color: rgb(160, 159, 159);
-    font-family: 'Roboto', sans-serif;
-    padding: 100px 0px 0px 0px;
-    text-align: center;
+  .imagen-carrito{
+    width: 200px;
   }
 
+ .contenedor-imagen-carrito{
+   float: left;
+  }
+
+  .nombre-producto-carrito{
+    font-size: 20px;
+    float: right;
+    margin-top: 80px;
+    padding: 0px 50px 0px 0px;
+  }
+
+  .detalle-producto-carrito{
+    font-size: 20px;
+    float: right;
+    margin-top: 80px;
+    padding: 0px 0px 0px 70px;
+  }
+
+  .boton-eliminar-comprar{
+    display: flex;
+    margin-top: 20px;
+    float: right;
+    margin-left: 80px;
+  }
+
+  .boton-eliminar-comprar a{
+    margin-left: 110px;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .boton-carrito-comprar{
+    border: solid 4px dodgerblue ;
+    background-color: dodgerblue;
+    border-radius: 5px;
+  }
