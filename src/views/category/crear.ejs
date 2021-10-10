@@ -2,10 +2,59 @@
 <html lang="es">
   <%- include ("../layouts/head") %>    
   <body>
+      
+    <style>
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background: #f1f1f1;
+        }
+        
+        textarea, select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background: #f1f1f1;
+        }
+            
+        .form {
+          border-radius: 5px;
+          background-color: #fff;
+          padding: 20px;
+        }
+        </style>
+
   <%- include ("../layouts/header") %>
-    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;  padding-bottom:4%;">    
-        Crear Categoria
-    </main>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;">
+    
+        <div id="carritoFlotante" class="carrito">
+            <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+        </div>
+        
+        <div class="sombra form" style="margin-left: 30%; width: fit-content; margin-bottom: 5%;">
+            <span><h2>CREAR CATEGORIA</h2></span>
+            <hr>
+            <form class="form">
+                <label>Nombre:</label>
+                <input id="nombre" name="nombre" type="text" maxlength="50" autocomplete="off" placeholder="Auriculares"/>                                
+                <label>Detalle:</label>            
+                <textarea id="detalle" name="detalle" rows="2" cols="6" autocomplete="off" placeholder="Auriculares y Airpods" style="width: 100%;"></textarea>
+            </form>
+        </div>
+               
+    
     <%- include ("../layouts/footer") %>
+    </main>
 </body>
 </html>
+
+
