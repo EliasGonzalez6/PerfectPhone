@@ -2,27 +2,7 @@
 <html lang="es">
   <%- include ("../layouts/head") %>    
   <body>
-  
-    <style>
-        table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 50%;          
-          /*border: 1px black;*/
-          margin-left: 25%;
-        }
-        
-        td, th {
-          /*border: 1px solid black;*/
-          text-align: left;
-          padding: 8px;
-        }
-        
-        tr:nth-child(even) {
-          background-color: #dddddd;
-        }
-    </style>
-
+      
   <%- include ("../layouts/header") %>
     <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;">
     
@@ -30,10 +10,10 @@
             <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
         </div>
         
-        <table style="margin-bottom:50px;" class="sombra">
+        <table style="margin-bottom:50px;" class="sombra form">
             <tr>
                 <td colspan="3" style="text-align: right;">        
-                        <a href="category/create"><i class="fa fa-plus" style="color: darkgreen;"></i></a>                    
+                        <a href="category/create"><i class="fa fa-plus btn-verde"></i></a>                    
                 </td>
             </tr>
             <tr>
@@ -53,8 +33,8 @@
                         <p><%= categories[i].detail %></p>
                     </td>   
                     <td style="text-align: center";>
-                        <a href="category/update/<%= categories[i].id %>"><i class="fa fa-edit" style="color: darkblue; margin-right:10px;"></i></a>
-                        <a href="category/delete/<%= categories[i].id %>"><i class="fa fa-trash" style="color: darkred;"></i></a>
+                        <a href="category/update/<%= categories[i].id %>"><i class="fa fa-edit btn-azul"></i></a>
+                        <a href="category/delete/<%= categories[i].id %>"><i class="fa fa-trash btn-rojo" ></i></a>
                     </td>
                 </tr>                                 
             <% } %>

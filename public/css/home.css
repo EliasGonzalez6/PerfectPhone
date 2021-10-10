@@ -17,6 +17,107 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
   }
 
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+  }
+  
+  textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+  }
+      
+  .form {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 30px;
+  }
+
+  .btn-verde{
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    color: darkgreen;
+    margin: 5px;      
+    padding: 5px;
+    background-color: white;    
+  }
+
+  .btn-verde:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;      
+    padding: 5px;
+    background-color: darkgreen;    
+  }
+
+  .btn-rojo{
+    border: 1px solid darkred;
+    border-radius: 5px;
+    color: darkred;
+    margin: 5px;      
+    padding: 5px;
+    background-color: white;   
+  }
+
+  .btn-rojo:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;      
+    padding: 5px;
+    background-color: darkred;    
+  }
+
+  .btn-azul{
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    color: darkblue;
+    margin: 5px;      
+    padding: 5px;
+    background-color: white;    
+  }
+
+  .btn-azul:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;      
+    padding: 5px;
+    background-color: darkblue;    
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;          
+    /*border: 1px black;*/
+    margin-left: 25%;
+  }
+  
+  td, th {
+    /*border: 1px solid black;*/
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
 /* header */
 
 .logo{
