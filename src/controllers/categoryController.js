@@ -25,9 +25,28 @@ const categoryController = {
         res.redirect("/category")
     },
 
-    update: (req,res) => res.render("category/editar"),
+    edit: function(req,res) {
+        let category = db.Category.findByPk(req.params.id)       
+        .then(function (category) {
+            res.render("category/editar", {category: category})
+        })        
+    }, 
 
-    delete: (req,res) => res.render("category/editar"),
+    update: function(req,res){
+        db.Category.update({
+            name: req.body.nombre,
+            detail: req.body.detalle
+        },{
+            where:{
+                id: req.params.id
+            }
+        });
+        res.redirect("/category")
+    },
+
+    delete: function(req,res) {
+        res.render("category/editar")
+    }, 
     
 };
 
