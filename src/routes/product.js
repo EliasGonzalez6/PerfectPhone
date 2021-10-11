@@ -1,39 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const product = require('../controllers/product');
-const multer = require('multer');
-const path = require('path');
+const productController = require("../controllers/productController");
 
-const validations = require('../middlewares/validateCreateProductMiddleware');
+router.get("/",productController.listado)
 
-let dest = multer.diskStorage({
-    destination: function (req, file, cb) {
-        let extension = path.extname(file.originalname);
-        if(extension.indexOf("jpg") > 0){
-            cb(null, path.resolve(__dirname,"../../public/uploads","products"))
-        }
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now()+ path.extname(file.originalname))
-    }
-})
-const upload = multer({storage:dest});
+router.get("/create",productController.create)
 
-router.get("/",product.index)
+router.post("/create",productController.save)
 
-router.get("/create",product.create)
+router.get("/edit/:id",productController.edit)
 
-router.get("/:id",product.show)
+router.post("/edit/:id",productController.update)
 
-router.get("/edit/:id",product.edit)
-
-//router.post("/save",[upload.single("image")],validations,product.save)
-
-router.patch("/update/:id",[upload.single("image")],product.update)
-
-router.delete("/delete/:id",product.delete)
-
-//procesar el registro
-router.post("/save", [upload.single('image')], validations, product.save);
+router.post("/delete/:id",productController.delete)
 
 module.exports = router

@@ -54,12 +54,5 @@ app.use("/color",color);
 const user = require('./routes/user');
 app.use("/user",user);
 
-/****************************/
-
-/*
-const userRoutes = require('./routes/userRoutes');
-app.use("/user",userRoutes);
-*/
-
 const product = require('./routes/product');
 app.use("/product",product);

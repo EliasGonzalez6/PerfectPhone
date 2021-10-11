@@ -13,7 +13,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull:false
         },
         description: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(500),
             allowNull:true
         },
         image: {
@@ -21,7 +21,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull:true
         },
         price: {
-            type: dataTypes.DECIMAL(10,4),
+            type: dataTypes.DECIMAL(10,2),
             allowNull:false
         },
         stock: {
