@@ -15,11 +15,15 @@ router.get("/detail/:id",userController.detail)
 
 router.get("/create",userController.create)
 
-router.post("/create", uploadFile.single('avatar'), validations, userController.save)
+router.post("/create", [uploadFile.single('avatar')], validations, userController.save)
 
 router.get("/edit/:id",userController.edit)
 
-router.post("/edit/:id", uploadFile.single('avatar'), validations, userController.update)
+router.post("/edit/:id", [uploadFile.single('avatar')], validations, userController.update)
+
+router.get("/editprofile/:id",userController.editprofile)
+
+router.post("/editprofile/:id", [uploadFile.single('avatar')], validations, userController.updateprofile)
 
 router.post("/delete/:id",userController.delete)
 
@@ -28,7 +32,7 @@ router.post("/delete/:id",userController.delete)
 router.get("/register", userController.register);
 
 //procesar el registro
-router.post("/register", uploadFile.single('avatar'), validations, userController.processRegister);
+router.post("/register", [uploadFile.single('avatar')], validations, userController.processRegister);
 
 //formulario de ingreso
 router.get("/login", guestMiddleware, userController.login);

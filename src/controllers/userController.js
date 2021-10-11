@@ -36,7 +36,7 @@ const userController = {
             fullname: req.body.fullname,
             email: req.body.email,            
             password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.file.filename,
+            avatar: req.body.avatar,
             rol: req.body.rol
         });
         res.redirect("/user")
@@ -52,6 +52,16 @@ const userController = {
         })        
     }, 
 
+    editprofile: function(req,res) {
+        let user = db.User.findByPk(req.params.id);
+        let roles = db.Rol.findAll();
+        
+        Promise.all([user,roles])
+        .then(function ([user,roles]) {
+            res.render("user/editprofile", {user: user, roles:roles})
+        })        
+    },
+
     update: function(req,res){
         db.User.update({
             fullname: req.body.fullname,
@@ -65,6 +75,21 @@ const userController = {
             }
         });
         res.redirect("/user")
+    },
+
+    updateprofile: function(req,res){
+        db.User.update({
+            fullname: req.body.fullname,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.body.avatar,
+            rol: req.body.rol
+        },{
+            where:{
+                id: req.params.id
+            }
+        });
+        res.redirect("/user/profile")
     },
 
     delete: function(req,res){

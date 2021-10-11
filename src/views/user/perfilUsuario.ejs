@@ -9,7 +9,10 @@
         <img src="/images/avatars/<%= user.avatar %> " alt="avatar" style="width:100%">
         <h1>Hola, <%= user.fullName %></h1>
         <p class="title"><%= user.email %></p>
-        <p><button>Editar</button></p>
+
+        <form action="editprofile/<%= user.id %>" style="display: inline-block; width: 100%;">
+          <button type="submit" style="width: 100%;">Editar</button>
+      </form>
       </div>
     </main>
   
