@@ -20,14 +20,19 @@
         <a href="#footer"><i class="fa fa-fw fa-envelope"></i> Contactos</a>
         <!-- <a href="/user/login"><i class="fa fa-fw fa-user"></i> Ingresar</a> -->
       
-        <div class="dropdown">
-          <a class="enlace-menu"><i class="fa fa-cog"></i></a>
-          <div class="dropdown-content">            
-            <a href="/category">Categoria</a>            
-            <a href="/rol">Roles</a>
-            <a href="/colores">Colores</a>
-          </div>       
-        </div>
+        <% if (locals.isLogged) { %>
+          <% if (locals.userLogged.rol == "Master") { %>
+            <div class="dropdown">
+              <a class="enlace-menu"><i class="fa fa-cog"></i> Configuraciones</a>
+              <div class="dropdown-content">            
+                <a href="/category">Categoria</a>            
+                <a href="/rol">Roles</a>
+                <a href="/colores">Colores</a>
+              </div>       
+            </div>
+          <% } %> 
+        <% } %> 
+
         <% if (locals.isLogged) { %>
         <div class="dropdown">
           <a class="enlace-menu"> <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%; margin-top: -10px;"> 
