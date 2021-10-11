@@ -7,7 +7,7 @@
       <div class="topnav-right">
         <a href="/" class="enlace-menu"><i class="fa fa-fw fa-home"></i> Inicio</a>
         <!-- <div class="dropdown"> -->
-          <a href="/product" class="enlace-menu"><i class="fa fa-dice-d6"></i> Productos</a>  
+          <a href="/product" class="enlace-menu"><i class="fa fa-dice-d6"></i> Productos</a>            
           <!--
           <div class="dropdown-content">
             <a href="/productos">Auriculares y Cargadores</a>
@@ -18,24 +18,32 @@
         </div>
          -->     
         <a href="#footer"><i class="fa fa-fw fa-envelope"></i> Contactos</a>
-        <a href="/user/login"><i class="fa fa-fw fa-user"></i> Ingresar</a>
-         <!-- <a href="/user/carrito"><i class="fas fa-shopping-cart"></i> Mis compras</a> -->
-         <!--<a href="/colores"><i class="fas fa-cog" style="font-size: 20px;"></i></a>-->
+        <!-- <a href="/user/login"><i class="fa fa-fw fa-user"></i> Ingresar</a> -->
+      
+        <% if (locals.isLogged) { %>
+          <% if (locals.userLogged.rol == "Master") { %>
+            <div class="dropdown">
+              <a class="enlace-menu"><i class="fa fa-cog"></i> Configuraciones</a>
+              <div class="dropdown-content">            
+                <a href="/category">Categoria</a>            
+                <a href="/rol">Roles</a>
+                <a href="/colores">Colores</a>
+              </div>       
+            </div>
+          <% } %> 
+        <% } %> 
 
+        <% if (locals.isLogged) { %>
         <div class="dropdown">
-          <a class="enlace-menu"><i class="fa fa-cog"></i></a>
+          <a class="enlace-menu"> <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%; margin-top: -10px;"> 
+            Hola, <%= locals.userLogged.fullName %> <i class="fa fa-caret-down"></i></a>
           <div class="dropdown-content">
-            <a href="/colores">Colores</a>
-            <a href="/category/create">Categoria</a>            
+            <a href="/user/profile">Mi Perfil</a>
+            <a href="/user/logout">Cerrar Sesión</a>
           </div>       
-        </div>
-
-        <div class="dropdown">
-          <a class="enlace-menu"> <img src="/images/avatars/1633574329224_img.jpg" width="40" style="border-radius: 100%;"> Hola  <i class="fa fa-caret-down"></i></a>
-          <div class="dropdown-content">
-            <a href="#">Mi Perfil</a>
-            <a href="#">Cerrar Sesión</a>
-          </div>       
-        </div>    
+        </div> 
+        <% } else { %> 
+          <a href="/user/login"><i class="fa fa-fw fa-user"></i> Ingresar</a>  
+        <% } %>
   </div>
 </header>

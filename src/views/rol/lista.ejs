@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+  <body>
+      
+  <%- include ("../layouts/header") %>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;">
+    
+        <div id="carritoFlotante" class="carrito">
+            <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+        </div>
+        
+        <table style="margin-bottom:50px;" class="sombra form">
+            <tr>
+                <td colspan="3" style="text-align: right;">        
+                        <a href="rol/create"><i class="fa fa-plus btn-verde"></i></a>                    
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3" style="text-align: center;"><h2>LISTA DE ROLES</h2></th>
+            </tr>
+            <tr>
+                <th style="text-align: center;"><h3>Rol</h3></th>
+                <th style="text-align: center;"><h3>Acciones</h3></th>
+            </tr>
+            <% for (let i = 0; i < roles.length; i++){ %>                            
+                <tr>                            
+                    <td style="text-align: center"; >
+                        <p><%= roles[i].name %></p>                      
+                    </td>                                                  
+                    <td style="text-align: center";>                        
+                        <form action="rol/edit/<%= roles[i].id %>" style="display: inline-block;">
+                            <button type="submit" style="background-color:transparent;"><i class="fa fa-edit btn-azul" ></i></button>
+                        </form>
+
+                        <form action="rol/delete/<%= roles[i].id %>" method="POST" style="display: inline-block;">
+                            <button type="submit" style="background-color:transparent;"><i class="fa fa-trash btn-rojo" ></i></button>
+                        </form>                        
+                    </td>
+                </tr>                                 
+            <% } %>
+        </table>        
+    
+    <%- include ("../layouts/footer") %>
+    </main>
+</body>
+</html>
+
+
