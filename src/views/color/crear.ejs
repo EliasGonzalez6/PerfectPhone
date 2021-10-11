@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+  <body>
+          
+  <%- include ("../layouts/header") %>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;">
+    
+        <div id="carritoFlotante" class="carrito">
+            <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+        </div>
+        
+        <div class="sombra form" style="margin-left: 30%; width: fit-content; margin-bottom: 5%;">
+            <span class="text-muted">                
+                <label style="font-size:1.5rem"><strong><a href="/color">Colores</a> <i class="fa fa-angle-right"></i> Crear</strong></label>                
+            </span>            
+            <hr>
+            <form class="form" style="height:100%" action="/color/create" method="POST">
+                <label>Nombre:</label>
+                <input id="nombre" name="nombre" type="text" maxlength="50" autocomplete="off" placeholder="Negro"/>                                
+                <label>Codigo:</label>            
+                <input type="color" id="codigo" name="codigo" value="#fff" style="width: 100%;"/>          
+                <button class="col-5 col-s-5 btn-verde" style="float: left;" type="submit" id="guardar" name="guardar">Guardar</button>                
+                <button class="col-5 col-s-5 btn-rojo" style="float: right;" type="reset">Borrar</button>
+               
+            </form>
+        </div>
+               
+    
+    <%- include ("../layouts/footer") %>
+    </main>
+</body>
+</html>
+
+

@@ -7,7 +7,7 @@
   "categoria": "1",
   "remember": "on",
   "avatar": "1633574329224_img.jpg",
-  "rol":"Master"
+  "rol": "Master"
  },
  {
   "id": 2,
@@ -17,7 +17,7 @@
   "categoria": "1",
   "remember": "on",
   "avatar": "1633741223400_img.jpg",
-  "rol":"Master"
+  "rol": "Master"
  },
  {
   "id": 3,
@@ -26,6 +26,14 @@
   "password": "$2a$10$5JeWmjiP8WgyaS6/Ylk5BelYijg/6MzjbsYP1ytpV8ddl.7EF4P7y",
   "categoria": "1",
   "avatar": "1633753482677_img.jpg",
-  "rol":"Usuario"
+  "rol": "Usuario"
+ },
+ {
+  "id": 4,
+  "fullName": "yoda",
+  "email": "yoda@gmail.com",
+  "password": "$2a$10$Eg3snqND0wvTgcoHWPMtLuVWm2sDx87VzqjNrAaR7pABwDUFDogo6",
+  "categoria": "1",
+  "avatar": "1633961040594_img.jpg"
  }
 ]
