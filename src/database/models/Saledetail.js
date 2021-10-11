@@ -10,13 +10,11 @@ module.exports = function(sequelize, dataTypes){
         },
         sale: {
             type: dataTypes.INTEGER(11),
-            allowNull:false,
-            unique:true
+            allowNull:false            
         },
         product: {
             type: dataTypes.INTEGER(11),
-            allowNull:false,
-            unique:true
+            allowNull:false            
         },
         quantities: {
             type: dataTypes.INTEGER(11),

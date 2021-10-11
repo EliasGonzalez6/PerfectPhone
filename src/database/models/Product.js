@@ -34,13 +34,11 @@ module.exports = function(sequelize, dataTypes){
         },
         brand: {
             type: dataTypes.INTEGER(11),
-            allowNull:true,
-            unique:true
+            allowNull:true            
         },
         category: {
             type: dataTypes.INTEGER(11),
-            allowNull:true,
-            unique:true
+            allowNull:true            
         }
     }
 
@@ -61,9 +59,14 @@ module.exports = function(sequelize, dataTypes){
         Product.belongsTo(models.Brand, {
             as:"products",
             foreignKey:"brand"
-        }),(models.Category, {
+        }),
+        (models.Category, {
             as:"products",
             foreignKey:"category"
+        }),
+        (models.Color, {
+            as:"products",
+            foreignKey:"color"
         })
     }
 

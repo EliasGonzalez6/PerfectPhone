@@ -26,8 +26,7 @@ module.exports = function(sequelize, dataTypes){
         },
         rol: {
             type: dataTypes.INTEGER(11),
-            allowNull:false,
-            unique:true
+            allowNull:false            
         }
     }
 
