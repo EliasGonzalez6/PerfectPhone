@@ -39,9 +39,11 @@ const userController = {
     },
 
     edit: function(req,res) {
-        let user = db.User.findByPk(req.params.id) 
-        let roles = db.Rol.findAll()      
-        .then(function (user) {
+        let user = db.User.findByPk(req.params.id);
+        let roles = db.Rol.findAll();
+        
+        Promise.all([user,roles])
+        .then(function ([user,roles]) {
             res.render("user/editar", {user: user, roles:roles})
         })        
     }, 
