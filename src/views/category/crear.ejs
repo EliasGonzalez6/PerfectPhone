@@ -15,13 +15,14 @@
                 <label style="font-size:1.5rem"><strong><a href="/category">Categoria</a> <i class="fa fa-angle-right"></i> Crear</strong></label>                
             </span>            
             <hr>
-            <form class="form" style="height:100%">
+            <form class="form" style="height:100%" action="/category/create" method="POST">
                 <label>Nombre:</label>
                 <input id="nombre" name="nombre" type="text" maxlength="50" autocomplete="off" placeholder="Auriculares"/>                                
                 <label>Detalle:</label>            
                 <textarea id="detalle" name="detalle" rows="2" cols="6" autocomplete="off" placeholder="Auriculares y Airpods" style="width: 100%;"></textarea>                
                 <button class="col-5 col-s-5 btn-verde" style="float: left;" type="submit" id="guardar" name="guardar">Guardar</button>                
                 <button class="col-5 col-s-5 btn-rojo" style="float: right;" type="reset">Borrar</button>
+                <!--<input type="color" id="codigo" name="codigo" value="#fff"/>-->
             </form>
         </div>
                
