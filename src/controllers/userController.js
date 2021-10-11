@@ -2,6 +2,10 @@ const express = require("express");
 const db = require("../database/models");
 const bcryptjs = require('bcryptjs');
 
+const {
+	validationResult
+} = require('express-validator');
+
 const userController = {
     
     listado: function(req, res){
@@ -32,7 +36,7 @@ const userController = {
             fullname: req.body.fullname,
             email: req.body.email,            
             password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.body.avatar,
+            avatar: req.file.filename,
             rol: req.body.rol
         });
         res.redirect("/user")
@@ -117,9 +121,9 @@ const userController = {
 		return res.render('user/formularioRegistro');
 	},
 
-	processRegister: function (req, res) {
+	processRegister: async function (req, res) {
 		const resultValidation = validationResult(req);
-
+        
 		if (resultValidation.errors.length > 0) {
 			return res.render('user/formularioRegistro', {
 				errors: resultValidation.mapped(),
@@ -127,9 +131,12 @@ const userController = {
 			});
 		}
 		
-		let userInDB = User.findByField('email', req.body.email);
-
-		
+		let userInDB = await db.User.findOne({
+            where:{
+                email:req.body.email
+            }
+        })
+        		
 		if (userInDB) {
 			return res.render('user/formularioRegistro', {
 				errors: {
@@ -140,16 +147,16 @@ const userController = {
 				oldData: req.body
 			});
 		}
+		
+		let userCreated = db.User.create({
+            fullname: req.body.fullName,
+            email: req.body.email,            
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.file.filename,
+            rol: req.body.rol
+        });
 
-		let userToCreate = {
-			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: req.file.filename
-		}
-
-		let userCreated = User.create(userToCreate);
-
-		return res.redirect('/login');
+		return res.redirect('/user/login');
 	},	
 
     profile: function (req, res) {
