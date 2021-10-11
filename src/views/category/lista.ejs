@@ -32,9 +32,14 @@
                     <td style="text-align: center"; >
                         <p><%= categories[i].detail %></p>
                     </td>   
-                    <td style="text-align: center";>
-                        <a href="category/edit/<%= categories[i].id %>"><i class="fa fa-edit btn-azul"></i></a>
-                        <a href="category/delete/<%= categories[i].id %>"><i class="fa fa-trash btn-rojo" ></i></a>
+                    <td style="text-align: center";>                        
+                        <form action="category/edit/<%= categories[i].id %>" style="display: inline-block;">
+                            <button type="submit" style="background-color:transparent;"><i class="fa fa-edit btn-azul" ></i></button>
+                        </form>
+
+                        <form action="category/delete/<%= categories[i].id %>" method="POST" style="display: inline-block;">
+                            <button type="submit" style="background-color:transparent;"><i class="fa fa-trash btn-rojo" ></i></button>
+                        </form>                        
                     </td>
                 </tr>                                 
             <% } %>

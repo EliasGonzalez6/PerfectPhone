@@ -44,10 +44,14 @@ const categoryController = {
         res.redirect("/category")
     },
 
-    delete: function(req,res) {
-        res.render("category/editar")
-    }, 
-    
+    delete: function(req,res){
+        db.Category.destroy({            
+            where:{
+                id: req.params.id
+            }
+        }); 
+        res.redirect("/category")
+    },
 };
 
 module.exports = categoryController;

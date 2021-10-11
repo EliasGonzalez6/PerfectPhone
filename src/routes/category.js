@@ -12,6 +12,6 @@ router.get("/edit/:id",categoryController.edit)
 
 router.post("/edit/:id",categoryController.update)
 
-router.delete("/delete/:id",categoryController.delete)
+router.post("/delete/:id",categoryController.delete)
 
 module.exports = router
