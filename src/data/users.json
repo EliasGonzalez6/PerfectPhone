@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "fullName": "sheldom",
+  "fullname": "sheldom",
   "email": "moriancumer6@gmail.com",
   "password": "$2a$10$WiIDXNI7uCk820IKq9qiieqf6VYj3l6Hc4P4R5EZxmjogLCqo/aCm",
   "categoria": "1",
@@ -11,7 +11,7 @@
  },
  {
   "id": 2,
-  "fullName": "Penny",
+  "fullname": "Penny",
   "email": "wendy.torres.19ee@gmail.com",
   "password": "$2a$10$6/tcSgZ6kzc61/VboS8FRuSHF4sT7DYsuzhYsUlCVryYf23PTRVsG",
   "categoria": "1",
@@ -21,7 +21,7 @@
  },
  {
   "id": 3,
-  "fullName": "john snow",
+  "fullname": "john snow",
   "email": "jhonsnow@gmail.com",
   "password": "$2a$10$5JeWmjiP8WgyaS6/Ylk5BelYijg/6MzjbsYP1ytpV8ddl.7EF4P7y",
   "categoria": "1",
@@ -30,7 +30,7 @@
  },
  {
   "id": 4,
-  "fullName": "yoda",
+  "fullname": "yoda",
   "email": "yoda@gmail.com",
   "password": "$2a$10$Eg3snqND0wvTgcoHWPMtLuVWm2sDx87VzqjNrAaR7pABwDUFDogo6",
   "categoria": "1",

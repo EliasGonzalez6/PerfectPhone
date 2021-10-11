@@ -124,7 +124,7 @@ const userController = {
 
 				return res.redirect('/user/profile');
 			} 
-			return res.render('formularioUsuario', {
+			return res.render('user/formularioUsuario', {
 				errors: {
 					email: {
 						msg: 'Los datos son inválidos'
@@ -174,7 +174,7 @@ const userController = {
 		}
 		
 		let userCreated = db.User.create({
-            fullname: req.body.fullName,
+            fullname: req.body.fullname,
             email: req.body.email,            
             password: bcryptjs.hashSync(req.body.password, 10),
             avatar: req.file.filename,

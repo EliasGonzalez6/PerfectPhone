@@ -2,7 +2,7 @@ const path = require('path');
 const { body } = require('express-validator');
 
 module.exports = [
-	body('fullName').notEmpty().withMessage('Tienes que escribir un nombre').bail() 
+	body('fullname').notEmpty().withMessage('Tienes que escribir un nombre').bail() 
 	.isLength({min: 2}).withMessage("Debe contener al menos 2 caracteres"),
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()

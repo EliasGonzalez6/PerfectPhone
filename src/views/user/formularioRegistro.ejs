@@ -17,13 +17,13 @@
       <label for="nombre y apellido"><b>Nombre y Apellido:</b></label>
       <input 
       type="text" 
-      name="fullName"
+      name="fullname"
       placeholder="Jhon Doe"
-      value="<%= locals.oldData ? oldData.fullName : null %>"
-      id="<%= locals.errors && errors.fullName ? 'error' : null %>"
+      value="<%= locals.oldData ? oldData.fullname : null %>"
+      id="<%= locals.errors && errors.fullname ? 'error' : null %>"
       >
-    <% if (locals.errors && errors.fullName) { %>
-      <p class="errortexto"> <%= errors.fullName.msg %> <i class="fas fa-exclamation-circle"></i></p>
+    <% if (locals.errors && errors.fullname) { %>
+      <p class="errortexto"> <%= errors.fullname.msg %> <i class="fas fa-exclamation-circle"></i></p>
       <% } %>
       
       <!--email  -->
