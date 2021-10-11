@@ -104,7 +104,7 @@ const userController = {
 			});
 		}
 
-		return res.render('formularioUsuario', {
+		return res.render('user/formularioUsuario', {
 			errors: {
 				email: {
 					msg: 'Email invalido'
@@ -117,11 +117,11 @@ const userController = {
 		return res.render('user/formularioRegistro');
 	},
 
-	processRegister: (req, res) => {
+	processRegister: function (req, res) {
 		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
-			return res.render('formularioRegistro', {
+			return res.render('user/formularioRegistro', {
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			});
@@ -131,7 +131,7 @@ const userController = {
 
 		
 		if (userInDB) {
-			return res.render('formularioRegistro', {
+			return res.render('user/formularioRegistro', {
 				errors: {
 					email: {
 						msg: 'Este email ya está registrado'
@@ -149,21 +149,23 @@ const userController = {
 
 		let userCreated = User.create(userToCreate);
 
-		return res.redirect('/user/login');
+		return res.redirect('/login');
 	},	
-	profile: (req, res) => {
-		return res.render('perfilUsuario', {
+
+    profile: function (req, res) {
+		return res.render('user/perfilUsuario', {
 			user: req.session.userLogged
 		});
 	},
-
-	logout: (req, res) => {
+	
+	logout: function (req, res) {
 		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
 	},
-	carrito: (req, res) => {
-		return res.render('carrito');
+
+	carrito: function (req, res) {
+		return res.render('user/carrito');
 	},
 };
 

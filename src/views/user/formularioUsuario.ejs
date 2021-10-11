@@ -4,19 +4,18 @@
   <body>
   <%- include ("../layouts/header") %>
 <main>
-
     <div class="bg-img">
-        <form method="POST" action="/user/login" class="container-usuario">
+        <form method="POST" action="/user/login" class="container-usuario form sombra">
           <img src="/images/logo formulario.jpg" class="logo2">
-          <div class="btn-group">
-            <a href="/user/login">Inicia Sesión</a>
-            <a href="/user/register">Registrate</a>
+          <div class="col-12" style="margin: 20px;">
+            <a class="btn-azul col-5" style="font-size: 1rem; text-align: center;" href="/user/login">Inicia Sesión</a>
+            <a class="btn-azul col-5" style="font-size: 1rem; text-align: center;" href="/user/register">Registrate</a>
           </div>
           <p></p>       
-          <label for="email"><b>Email</b></label>
+          <label for="email">Email:</label>
           <input 
           type="text" 
-          placeholder="Email" 
+          placeholder="jhondoe@demo.com" 
           name="email"
           value="<%= locals.oldData ? oldData.email : null %>"
           id="<%= locals.errors && errors.email ? 'error' : null %>"
@@ -25,23 +24,13 @@
             <p class="errortexto"> <%= errors.email.msg %> <i class="fas fa-exclamation-circle"></i></p>
             <% } %>
       
-          <label for="psw"><b>Clave</b></label>
-          <input type="password" placeholder="Clave" name="password">
+          <label for="psw">Contraseña:</label>
+          <input type="password" placeholder="*********" name="password">
 
-          <label>
-            <input type="checkbox" checked="checked" name="remember_user" style="margin-bottom:15px"> Recuerdame
-          </label>
+          <input type="checkbox" checked="checked" name="remember_user" style="margin-bottom:15px; display:inline; width: fit-content;">
+          <label>Recuerdame</label>
       
-          <button type="submit" class="btn">Iniciar Sesión</button>
-          <a href="#"> Olvidaste tu clave? </a>
-          <p>
-          <p class="acceso-rapido">Acceso rápido con</p>
-
-          <div class="iconos-registro">
-            <a href="#" class="fb"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="twitter"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="google"><i class="fab fa-google"></i></a>
-          </div>
+          <button type="submit" class="btn-verde">Iniciar Sesión</button>                  
         </form>
   </div>
 

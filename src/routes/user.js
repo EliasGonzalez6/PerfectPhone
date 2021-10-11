@@ -37,10 +37,10 @@ router.get("/login", guestMiddleware, userController.login);
 router.post("/login",userController.loginProcess);
 
 // Perfil de Usuario
-router.get('/profile/', authMiddleware, userController.profile);
+router.get('/profile', authMiddleware, userController.profile);
 
 // Logout
-router.get('/logout/', userController.logout);
+router.get('/logout', userController.logout);
 
 //carrito
 router.get("/carrito",userController.carrito);
