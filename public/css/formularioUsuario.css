@@ -6,7 +6,7 @@
    width: 100px;
    height: 100px;
    text-align: center;
-   margin-left: 80px;
+   margin-left: 34%;
    border: 1px solid color white;
   }
 
@@ -46,7 +46,7 @@
      background-image: url("/images/fondo usuario.jpg"); 
   
     /* Controla la altura de la imagen */
-    height: 650px;
+    height: 700px;
   
     /*Centra y escala la imagen de forma agradable*/
     background-position: center;
@@ -55,15 +55,14 @@
     }
   
   /* Agregar estilos al contenedor de formularios */
-  .container {
-    font-family: 'Roboto', sans-serif;
+  .container-usuario{
     position: absolute;
-    right: 0;
-    margin-top: 70px;
-    margin-right: 480px;
-    max-width: 300px;
+    margin-top: 6%;
+    width: 27%;
+    margin-left: 35%;
     padding: 16px;
     background-color: white;
+    border-radius: 10px;
   }
   
   /* Campos de entrada de ancho completo */
@@ -134,9 +133,8 @@
 /*la imagen */
 .bg-registro-img{
   background-image: url("/images/fondo usuario.jpg"); 
-  height: 800px;
-
- /*Centra y escala la imagen de forma agradable*/
+  height: 850px;
+/*Centra y escala la imagen de forma agradable*/
  background-position: center;
  background-repeat: no-repeat;
  background-size: cover;
@@ -194,8 +192,9 @@ button:hover {
   padding: 16px;
   width: 27%;
   background-color: white;
-  margin-left: 480px;
-  margin-top: 40px;
+  margin-left: 35%;
+  margin-top: 4%;
+  border-radius: 10px;
 }
 
 /* Flotadores claros */
