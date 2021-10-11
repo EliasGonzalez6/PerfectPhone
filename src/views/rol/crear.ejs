@@ -15,44 +15,82 @@
                 <label style="font-size:1.5rem"><strong><a href="/rol">Rol</a> <i class="fa fa-angle-right"></i> Crear</strong></label>                
             </span>            
             <hr>
-            <form class="form" style="height:100%" action="/rol/create" method="POST">
+            <form id="formulario" class="form" style="height:100%" action="/rol/create" method="POST">
                 <label>Rol:</label>
                 <input id="nombre" name="nombre" type="text" maxlength="50" autocomplete="off" placeholder="Usuario"/>                                                
                 
                 <label style="margin-left: 6%;">Leer</label>
                 <label class="switch">                    
-                    <input type="checkbox" name="leer">
+                    <input type="checkbox" name="leer" id="leer" onclick="valoresCheckboxs();">
                     <span class="slider-btn round"></span>
                 </label>  
                 
                 <label style="margin-left: 6%;">Crear</label>
                 <label class="switch">                    
-                    <input type="checkbox" name="crear">
+                    <input type="checkbox" name="crear" id="crear" onclick="valoresCheckboxs();">
                     <span class="slider-btn round"></span>
                 </label>  
 
                 <label style="margin-left: 6%;">Editar</label>
                 <label class="switch">                    
-                    <input type="checkbox" name="editar">
+                    <input type="checkbox" name="editar" id="editar" onclick="valoresCheckboxs();">
                     <span class="slider-btn round"></span>
                 </label> 
 
                 <label style="margin-left: 6%;">Borrar</label>
                 <label class="switch">                    
-                    <input type="checkbox" name="borrar">
+                    <input type="checkbox" name="borrar" id="borrar" onclick="valoresCheckboxs();">
                     <span class="slider-btn round"></span>
                 </label> 
 
                 <br><br>
                 <button class="col-5 col-s-5 btn-verde" style="float: left;" type="submit" id="guardar" name="guardar">Guardar</button>                
-                <button class="col-5 col-s-5 btn-rojo" style="float: right;" type="reset">Borrar</button>
-                <!--<input type="color" id="codigo" name="codigo" value="#fff"/>-->
+                <button class="col-5 col-s-5 btn-rojo" style="float: right;" type="reset">Borrar</button>                
             </form>
         </div>
                
     
     <%- include ("../layouts/footer") %>
     </main>
+
+    <script>
+        document.getElementById("guardar").addEventListener("click", function(event){
+            event.preventDefault();
+            let formulario = document.getElementById('formulario');
+            valoresCheckboxs();
+            formulario.submit();            
+        });  
+        
+        function valoresCheckboxs(){
+            var isLeer = document.getElementById('leer').checked;
+            if(isLeer){
+                document.getElementById('leer').value = 1;
+            }else{
+                document.getElementById('leer').value = 0;
+            }
+
+            var isCrear = document.getElementById('crear').checked;
+            if(isCrear){
+                document.getElementById('crear').value = 1;
+            }else{
+                document.getElementById('crear').value = 0;
+            }
+
+            var isEditar = document.getElementById('editar').checked;
+            if(isEditar){
+                document.getElementById('editar').value = 1;
+            }else{
+                document.getElementById('editar').value = 0;
+            }
+
+            var isBorrar = document.getElementById('borrar').checked;
+            if(isBorrar){
+                document.getElementById('borrar').value = 1;
+            }else{
+                document.getElementById('borrar').value = 0;
+            }
+        }
+    </script>
 </body>
 </html>
 

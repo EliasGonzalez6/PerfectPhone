@@ -12,22 +12,22 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(15),
             allowNull:false
         },
-        create: {
+        crear: {
             type: dataTypes.TINYINT(1),
             defaultValue:0,
             allowNull:false
         },
-        read: {
+        leer: {
             type: dataTypes.TINYINT(1),
             defaultValue:0,
             allowNull:false
         },
-        update: {
+        editar: {
             type: dataTypes.TINYINT(1),
             defaultValue:0,
             allowNull:false
         },
-        delete: {
+        borrar: {
             type: dataTypes.TINYINT(1),
             defaultValue:0,
             allowNull:false

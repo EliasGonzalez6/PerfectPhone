@@ -16,8 +16,11 @@ const rolController = {
 
     save: function(req,res){
         db.Rol.create({
-            name: req.body.nombre,
-            detail: req.body.detalle
+            name: req.body.nombre,            
+            leer: req.body.leer,
+            crear: req.body.crear,
+            editar: req.body.editar,
+            borrar: req.body.borrar
         });
         res.redirect("/rol")
     },
@@ -32,7 +35,10 @@ const rolController = {
     update: function(req,res){
         db.Rol.update({
             name: req.body.nombre,
-            detail: req.body.detalle
+            leer: req.body.leer,
+            crear: req.body.crear,
+            editar: req.body.editar,
+            borrar: req.body.borrar
         },{
             where:{
                 id: req.params.id
