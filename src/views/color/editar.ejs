@@ -18,7 +18,7 @@
             <form class="form" style="height:100%" action="/color/edit/<%= color.id %>" method="POST">
                 <label>Nombre:</label>
                 <input id="nombre" name="nombre" type="text" maxlength="50" autocomplete="off" placeholder="Negro" value="<%= color.name %>"/>                                
-                <label>Detalle:</label>            
+                <label>Codigo:</label>            
                 <input type="color" id="codigo" name="codigo" style="width: 100%;" value="<%= color.codigo %>"/>                
                 <button class="col-5 col-s-5 btn-verde" style="float: left;" type="submit" id="guardar" name="guardar">Guardar</button>                
                 <button class="col-5 col-s-5 btn-rojo" style="float: right;" type="reset">Borrar</button>
