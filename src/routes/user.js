@@ -4,6 +4,8 @@ const userController = require("../controllers/userController");
 
 router.get("/",userController.listado)
 
+router.get("/detail/:id",userController.detail)
+
 router.get("/create",userController.create)
 
 router.post("/create",userController.save)

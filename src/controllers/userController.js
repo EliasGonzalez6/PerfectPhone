@@ -10,6 +10,15 @@ const userController = {
             })
     },
 
+    detail: function(req,res) {
+        let user = db.User.findByPk(req.params.id,{
+            include:[{association:"roles"}]
+        })       
+        .then(function (user) {
+            res.render("user/detalle", {user: user})
+        })        
+    }, 
+
     create: function(req,res){
         res.render("user/crear")
     },
