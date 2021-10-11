@@ -10,7 +10,7 @@
   }
 
   a{
-    text-decoration: none;
+    text-decoration: none;    
   }
 
   .sombra{    
@@ -116,6 +116,11 @@
   
   tr:nth-child(even) {
     background-color: #dddddd;
+  }
+
+  .text-muted{
+    color: dimgray; 
+    opacity:70%;
   }
 
 /* header */
