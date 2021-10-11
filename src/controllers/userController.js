@@ -1,5 +1,6 @@
 const express = require("express");
 const db = require("../database/models");
+const bcryptjs = require('bcryptjs');
 
 const userController = {
     
@@ -20,28 +21,38 @@ const userController = {
     }, 
 
     create: function(req,res){
-        res.render("user/crear")
+        let roles = db.Rol.findAll()       
+        .then(function (roles) {
+            res.render("user/crear", {roles: roles})
+        })         
     },
 
     save: function(req,res){
         db.User.create({
-            name: req.body.nombre,
-            detail: req.body.detalle
+            fullname: req.body.fullname,
+            email: req.body.email,            
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.body.avatar,
+            rol: req.body.rol
         });
         res.redirect("/user")
     },
 
     edit: function(req,res) {
-        let user = db.User.findByPk(req.params.id)       
+        let user = db.User.findByPk(req.params.id) 
+        let roles = db.Rol.findAll()      
         .then(function (user) {
-            res.render("user/editar", {user: user})
+            res.render("user/editar", {user: user, roles:roles})
         })        
     }, 
 
     update: function(req,res){
         db.User.update({
-            name: req.body.nombre,
-            detail: req.body.detalle
+            fullname: req.body.fullname,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.body.avatar,
+            rol: req.body.rol
         },{
             where:{
                 id: req.params.id
