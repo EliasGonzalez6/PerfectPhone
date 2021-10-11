@@ -73,7 +73,7 @@ const userController = {
     },
 
     login: function (req, res) {
-		return res.render('formularioUsuario');
+		return res.render('user/formularioUsuario');
 	},
 
 	loginProcess: async function (req, res) {
@@ -113,13 +113,10 @@ const userController = {
 		});
 	},
 
-
-
-
-
-    register: (req, res) => {
-		return res.render('formularioRegistro');
+    register: function (req, res) {
+		return res.render('user/formularioRegistro');
 	},
+
 	processRegister: (req, res) => {
 		const resultValidation = validationResult(req);
 
