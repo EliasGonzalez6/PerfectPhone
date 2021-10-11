@@ -9,7 +9,7 @@ module.exports = [
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña').bail() 
 	.isLength({min: 8}).withMessage("Debe contener al menos 8 caracteres"),
-	body('categoria').notEmpty().withMessage('Tienes que elegir una categoria'),
+	body('rol').notEmpty().withMessage('Tienes que elegir un rol'),
 	body('avatar').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
