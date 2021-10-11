@@ -1,36 +1,36 @@
 const express = require("express");
 const db = require("../database/models");
 
-const categoryController = {
+const rolController = {
     
     listado: function(req, res){
-        db.Category.findAll()
-            .then(function (categories) {
-                res.render("category/lista", {categories: categories})
+        db.Rol.findAll()
+            .then(function (roles) {
+                res.render("rol/lista", {roles: roles})
             })
     },
 
     create: function(req,res){
-        res.render("category/crear")
+        res.render("rol/crear")
     },
 
     save: function(req,res){
-        db.Category.create({
+        db.Rol.create({
             name: req.body.nombre,
             detail: req.body.detalle
         });
-        res.redirect("/category")
+        res.redirect("/rol")
     },
 
     edit: function(req,res) {
-        let category = db.Category.findByPk(req.params.id)       
-        .then(function (category) {
-            res.render("category/editar", {category: category})
+        let rol = db.Rol.findByPk(req.params.id)       
+        .then(function (rol) {
+            res.render("rol/editar", {rol: rol})
         })        
     }, 
 
     update: function(req,res){
-        db.Category.update({
+        db.Rol.update({
             name: req.body.nombre,
             detail: req.body.detalle
         },{
@@ -38,17 +38,17 @@ const categoryController = {
                 id: req.params.id
             }
         });
-        res.redirect("/category")
+        res.redirect("/rol")
     },
 
     delete: function(req,res){
-        db.Category.destroy({            
+        db.Rol.destroy({            
             where:{
                 id: req.params.id
             }
         }); 
-        res.redirect("/category")
+        res.redirect("/rol")
     },
 };
 
-module.exports = categoryController;
+module.exports = rolController;

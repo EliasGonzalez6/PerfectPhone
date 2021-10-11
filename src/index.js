@@ -42,6 +42,9 @@ app.use(main);
 const category = require('./routes/category');
 app.use("/category",category);
 
+const rol = require('./routes/rol');
+app.use("/rol",rol);
+
 const product = require('./routes/product');
 app.use("/product",product);
 
