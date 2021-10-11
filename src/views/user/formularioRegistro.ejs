@@ -5,19 +5,20 @@
   <%- include ("../layouts/header") %> 
 <main>
   <div class="bg-registro-img"> 
-  <form method="POST" action="/user/register" enctype="multipart/form-data" style="padding-top: 20px;">
+  <form class="sombra" method="POST" action="/user/register" enctype="multipart/form-data" style="padding-top: 20px;">
     <div class="container-registro">
       <img src="/images/logo formulario.jpg" class="logo2">
-      <h2 class="titulo-registrate">Registrate</h2>
-      <p>Completa los campos para registrate.</p>
-      <hr>
-     
+      <div class="col-12" style="margin: 20px;">
+        <a class="btn-azul col-5" style="font-size: 1rem; text-align: center;" href="/user/login">Inicia Sesión</a>
+        <a class="btn-azul col-5" style="font-size: 1rem; text-align: center;" href="/user/register">Registrate</a>
+      </div>            
+      <br/>
       <!-- nombre y apellido  -->
-      <label for="nombre y apellido"><b>Nombre y Apellido</b></label>
+      <label for="nombre y apellido"><b>Nombre y Apellido:</b></label>
       <input 
       type="text" 
       name="fullName"
-      placeholder="Enter nombre y apellido"
+      placeholder="Jhon Doe"
       value="<%= locals.oldData ? oldData.fullName : null %>"
       id="<%= locals.errors && errors.fullName ? 'error' : null %>"
       >
@@ -26,10 +27,10 @@
       <% } %>
       
       <!--email  -->
-      <label for="email"><b>Email</b></label>
+      <label for="email"><b>Email:</b></label>
       <input 
       type="text" 
-      placeholder="Enter Email" 
+      placeholder="jhondoe@demo.com" 
       name="email"
       value="<%= locals.oldData ? oldData.email : null %>"
       id="<%= locals.errors && errors.email ? 'error' : null %>"
@@ -39,10 +40,10 @@
       <% } %>
   
       <!--comtraseña -->
-      <label for="psw"><b>Contraseña</b></label>
+      <label for="psw"><b>Contraseña:</b></label>
       <input 
       type="password" 
-      placeholder="Enter Contraseña" 
+      placeholder="********" 
       name="password"
       value="<%= locals.oldData ? oldData.password : null %>"
       id="<%= locals.errors && errors.password ? 'error' : null %>"
@@ -51,20 +52,10 @@
       <p class="errortexto"> <%= errors.password.msg %> <i class="fas fa-exclamation-circle"></i></p>
       <% } %>
 
-      <!--Categoria -->
-       <label for="categoria"><b>Categoria</b></label>
-      <select name="categoria" id="pais_x">
-          <option>seleccionar</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-      </select> <br><br>
-       <% if (locals.errors && errors.categoria) { %>
-        <p class="errortexto"> <%= errors.categoria.msg %> <i class="fas fa-exclamation-circle"></i></p>
-        <% } %> 
-  
+      <input type="hidden" id="rol" nombre="rol" value="1"/>
+       
       <!--subir foto-->
-      <label for="subir foto"><b>Subir foto</b></label>
+      <label for="subir foto"><b>Avatar:</b></label>
       <p></p>
       <input type="file" id="foto_x" name="avatar"><br><br>
       <% if (locals.errors && errors.avatar) { %>
@@ -72,7 +63,7 @@
         <% } %>
   
       <div class="clearfix">
-        <button type="submit" class="signupbtn">Registrarse</button>
+        <button type="submit" class="btn-verde">Registrarse</button>
       </div>
     </div>
   </form>

@@ -151,7 +151,7 @@
 /*la imagen */
 .bg-registro-img{
   background-image: url("/images/fondo usuario.jpg"); 
-  height: 850px;
+  height: 750px;
 /*Centra y escala la imagen de forma agradable*/
  background-position: center;
  background-repeat: no-repeat;
