@@ -6,6 +6,8 @@ router.get("/",categoryController.listado)
 
 router.get("/create",categoryController.create)
 
+router.post("/create",categoryController.save)
+
 router.get("/update/:id",categoryController.update)
 
 router.delete("/delete/:id",categoryController.delete)

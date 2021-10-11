@@ -13,7 +13,17 @@ const categoryController = {
             })
     },
 
-    create: (req,res) => res.render("category/crear"),
+    create: function(req,res){
+        res.render("category/crear")
+    },
+
+    save: function(req,res){
+        db.Category.create({
+            name: req.body.nombre,
+            detail: req.body.detalle
+        });
+        res.redirect("/category")
+    },
 
     update: (req,res) => res.render("category/editar"),
 
