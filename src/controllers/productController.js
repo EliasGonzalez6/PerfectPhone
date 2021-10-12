@@ -10,6 +10,15 @@ const productController = {
             })
     },
 
+    detail: function(req,res) {
+        let product = db.Product.findByPk(req.params.id,{
+            include:[{association:"brands"},{association:"categories"},{association:"colors"}]
+        })       
+        .then(function (product) {
+            res.render("product/detalles", {product: product})
+        })        
+    },     
+
     create: function(req,res){
         res.render("product/crear")
     },

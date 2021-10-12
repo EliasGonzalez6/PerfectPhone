@@ -57,15 +57,17 @@ module.exports = function(sequelize, dataTypes){
         }),
 
         Product.belongsTo(models.Brand, {
-            as:"products",
+            as:"brands",
             foreignKey:"brand"
         }),
-        (models.Category, {
-            as:"products",
+
+        Product.belongsTo(models.Category, {
+            as:"categories",
             foreignKey:"category"
         }),
-        (models.Color, {
-            as:"products",
+
+        Product.belongsTo(models.Color, {
+            as:"colors",
             foreignKey:"color"
         })
     }

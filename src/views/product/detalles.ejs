@@ -28,7 +28,7 @@
 
                 <div class="lado derecho" style=" float:right; width: 40%; margin-top:20px;">
                         <p style="font-size: 25px;"><%= product.name %></p>
-                        <p style="font-size: 25px;">$ <%= product.precio %></p>
+                        <p style="font-size: 25px;">$ <%= product.price %></p>
                         <!-- <p><%= product.brand.name %></p> -->
                     <form action="/carrito" method="GET">
                          
@@ -43,14 +43,11 @@
 
                         <!-- <fieldset> hace el cuadro -->
                             <div style="margin-top: 10px;">            
-                            <p style="font-size: 20px">Color:</p>    
-                             <% product.colors.forEach(color => { %>                        
-                            <input type="radio" name="color" required id="color-<%= color.id %>" value="<%= color.id %>"/>
-                            <label for="color-<%= color.id %>">
-                                <%= color.name %>
-                                <span style="<%= `background-color:${color.value};`%> display: inline-block; width: 1rem; height:1rem" class="color"></span>
-                            </label>                        
-                             <% }) %>
+                            <p style="font-size: 20px">Color:</p>                                                       
+                            <input style="display: inline; width: fit-content;" type="radio" name="color" id="color" value="<%= product.colors.id %>" checked/>
+                            <label><%= product.colors.name %></label> 
+                            <span style="display: inline-block; width: 1rem; height:1rem; background-color:<%= product.colors.codigo %>;"></span>
+                             
                             
                              <p style="font-size: 20px;"><label for="quantity" style=""> Cantidad:</label></p>
                              <input type="number" min="1" max="3" value="1" required>
