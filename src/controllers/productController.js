@@ -17,7 +17,21 @@ const productController = {
         .then(function (product) {
             res.render("product/detalles", {product: product})
         })        
-    },     
+    },   
+    
+    buscar: async function(req,res) {
+        console.log("Entre aqui");
+        let product = await db.Product.findOne({
+            where:{
+                name:req.body.busqueda
+            }
+        })       
+        .then(function (product) {
+            res.render("product/lista", {product: product})
+        })       
+    },  
+
+    /*******************/
 
     create: function(req,res){
         res.render("product/crear")

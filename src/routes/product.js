@@ -23,6 +23,10 @@ router.get("/",productController.listado)
 
 router.get("/:id",productController.detail)
 
+//router.get("/buscar/:busqueda",productController.buscar)
+
+/********************/
+
 router.get("/create",productController.create)
 
 router.post("/create",productController.save)
