@@ -1,5 +1,6 @@
 const express = require("express");
 const db = require("../database/models");
+const Op = require("../../node_modules/sequelize/lib/operators");
 
 const productController = {
     
@@ -23,7 +24,7 @@ const productController = {
         console.log("Entre aqui");
         let product = await db.Product.findAll({
             where:{
-                name:req.params.busqueda
+                name:{[Op.like]:`%${req.params.busqueda}%`},
             }
         })       
         .then(function (product) {
