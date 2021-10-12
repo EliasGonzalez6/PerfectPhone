@@ -21,9 +21,9 @@ const productController = {
     
     buscar: async function(req,res) {
         console.log("Entre aqui");
-        let product = await db.Product.findOne({
+        let product = await db.Product.findAll({
             where:{
-                name:req.body.busqueda
+                name:req.params.busqueda
             }
         })       
         .then(function (product) {

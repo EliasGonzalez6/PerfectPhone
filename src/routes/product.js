@@ -19,11 +19,11 @@ let dest = multer.diskStorage({
 })
 const upload = multer({storage:dest});
 
-router.get("/",productController.listado)
+router.get("/",productController.listado);
 
-router.get("/:id",productController.detail)
+router.get("/detalle/:id",productController.detail);
 
-//router.get("/buscar/:busqueda",productController.buscar)
+router.get("/buscar/:busqueda",productController.buscar)
 
 /********************/
 
