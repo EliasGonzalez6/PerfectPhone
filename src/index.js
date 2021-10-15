@@ -56,3 +56,7 @@ app.use("/user",user);
 
 const product = require('./routes/product');
 app.use("/product",product);
+
+
+const api = require('./routes/api');
+app.use("/api",api);

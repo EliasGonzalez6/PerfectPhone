@@ -21,7 +21,6 @@ const productController = {
     },   
     
     buscar: async function(req,res) {
-        console.log("Entre aqui");
         let product = await db.Product.findAll({
             where:{
                 name:{[Op.like]:`%${req.params.busqueda}%`},
