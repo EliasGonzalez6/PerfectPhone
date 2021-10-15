@@ -66,9 +66,9 @@ ___
 
 ___
 ### **Nuestro logo**
-Isologos: es el resultado de la unión del logotipo y el isotipo, pero en este caso las dos partes que lo componen son indivisibles. No lograrían funcionar por separado.
+ Imagotipo: es un elemento que está compuesto por texto y por una imagen representativa o simbólica. Para considerarlo un imagotipo es necesario que los dos elementos estén separados, quiere decir que el logo se conforma por dos elementos independientes.
 
-<img src="public/images/logo formulario.jpg" style="width: 30% ">
+<img src="public/images/logo.jpg" style="width: 30% ">
 
 ___
 ### **Gracias por leer hasta acá.**
