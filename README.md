@@ -66,7 +66,7 @@ ___
 
 ___
 ### **Nuestro logo**
- Imagotipos: es un elemento que está compuesto por texto y por una imagen representativa o simbólica. Para considerarlo un imagotipo es necesario que los dos elementos estén separados, quiere decir que el logo se conforma por dos elementos independientes.
+ Imagotipo: es un elemento que está compuesto por texto y por una imagen representativa o simbólica. Para considerarlo un imagotipo es necesario que los dos elementos estén separados, quiere decir que el logo se conforma por dos elementos independientes.
 
 <img src="public/images/logo.jpg" style="width: 30% ">
 
