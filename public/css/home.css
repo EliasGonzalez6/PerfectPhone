@@ -18,7 +18,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
   }
 
-  input[type=text], select {
+  input, select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -106,6 +106,14 @@
     border-collapse: collapse;
     width: 50%;          
     /*border: 1px black;*/
+    /*margin-left: 25%;*/
+  }
+
+  .tabla-maestros {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;          
+    /*border: 1px black;*/
     margin-left: 25%;
   }
   
@@ -188,8 +196,8 @@
 /* header */
 
 .logo{
- width: 100px;
- height: 100px;
+ width: 80px;
+ height: 80px;
  margin-left: 5px;
  margin-top: none;
  margin-bottom: none ;

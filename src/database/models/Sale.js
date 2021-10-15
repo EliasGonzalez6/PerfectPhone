@@ -14,8 +14,7 @@ module.exports = function(sequelize, dataTypes){
         },
         user: {
             type: dataTypes.INTEGER(11),
-            allowNull:false,
-            unique:true
+            allowNull:false,            
         },
         subtotal: {
             type: dataTypes.DECIMAL(10,4),

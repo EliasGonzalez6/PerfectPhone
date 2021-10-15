@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+  <body>
+          
+  <%- include ("../layouts/header") %>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;">
+    
+        <div id="carritoFlotante" class="carrito">
+            <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+        </div>
+        
+        <div class="sombra form" style="margin-left: 25%; width: fit-content; margin-bottom: 5%; width: 50%;">
+            <span class="text-muted">                
+                <label style="font-size:1.5rem"><strong><a href="/user">Usuario</a> <i class="fa fa-angle-right"></i> Crear</strong></label>                
+            </span>            
+            <hr>
+            <form class="form" style="height:100%;" action="/user/create" method="POST">
+                <label>Nombre:</label>
+                <input id="fullname" name="fullname" type="text" maxlength="50" autocomplete="off" placeholder="Jhon Doe"/>                                
+                <label>Email:</label>            
+                <input id="email" name="email" type="email" autocomplete="off" placeholder="jhondoe@demo.com" style="width: 100%;"/>               
+                <label>Contraseña:</label>            
+                <input id="password" name="password" type="password" autocomplete="off" style="width: 100%;"/>               
+                <label>Avatar:</label>            
+                <input id="avatar" name="avatar" type="file" autocomplete="off" style="width: 100%;"/>               
+
+                <label>Rol:</label>
+                <select name="rol" id="rol">
+                    <option value="">seleccionar...</option>
+                    <% for (let i = 0; i < roles.length; i++){ %>  
+                        <option value="<%= roles[i].id %>"><%= roles[i].name %></option>
+                    <% } %>                                                              
+                </select> <br><br>
+
+                <button class="col-5 col-s-5 btn-verde" style="float: left;" type="submit" id="guardar" name="guardar">Guardar</button>                
+                <button class="col-5 col-s-5 btn-rojo" style="float: right;" type="reset">Borrar</button>                
+            </form>
+        </div>
+               
+    
+    <%- include ("../layouts/footer") %>
+    </main>
+</body>
+</html>
+
+

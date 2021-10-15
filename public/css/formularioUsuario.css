@@ -10,8 +10,26 @@
    border: 1px solid color white;
   }
 
+  .btn-azul{
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    color: darkblue;
+    margin: 5px;      
+    padding: 5px;
+    background-color: white;    
+  }
+
+  .btn-azul:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;      
+    padding: 5px;
+    background-color: darkblue;    
+  }
+
    /* boton inicio/registro */
-   .btn-group a {
+   /*.btn-group a {
     text-align: center; 
     text-decoration: none;
     font-size: 17px;
@@ -21,32 +39,32 @@
     padding: 10px;
     margin: 15px 0 2px 0;
     border: 1px solid white;
-    cursor: pointer; /* Puntero / icono de mano */
-    float: left; /*Flotar los botones uno al lado del otro */
-  }
+    cursor: pointer; 
+    float: left; 
+  }*/
   
-   .btn-group button:not(:last-child) {
-    border-right: none; /* Evitar bordes dobles */
-  }
+   /*.btn-group button:not(:last-child) {
+    border-right: none;
+  }*/
   
   /* Borrar flotadores (truco clearfix) */
-  .btn-group:after {
+  /*.btn-group:after {
     content: "";
     clear: both;
     display: table;
-  }
+  }*/
   
   /* Agrega un color de fondo al pasar el mouse */
-  .btn-group a:hover {
+  /*.btn-group a:hover {
    color: white;
-  }
+  }*/
   
   /* La imagen utilizada */
    .bg-img {
      background-image: url("/images/fondo usuario.jpg"); 
   
     /* Controla la altura de la imagen */
-    height: 700px;
+    height: 620px;
   
     /*Centra y escala la imagen de forma agradable*/
     background-position: center;
@@ -122,7 +140,7 @@
 }
 
 .google i{
-  background-color: red;
+  background-color: darkred;
   color: white;
   padding: 3px;
   margin: 3px 5px;
@@ -133,7 +151,7 @@
 /*la imagen */
 .bg-registro-img{
   background-image: url("/images/fondo usuario.jpg"); 
-  height: 850px;
+  height: 750px;
 /*Centra y escala la imagen de forma agradable*/
  background-position: center;
  background-repeat: no-repeat;
@@ -214,9 +232,9 @@ button:hover {
 /* error usuario css */
 
 #error{
-  border: solid 1px red;
+  border: solid 1px darkred;
 }
 .errortexto{
-  color: red;
+  color: darkred;
   margin-top: -15px;
 }

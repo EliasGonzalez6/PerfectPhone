@@ -1,8 +1,10 @@
 <header>
   <div class="col-12 col-s-12 topnav" style="display:block; clear:both;">    
       <img src="/images/logo.jpg" class="logo">
-      <input type="text" placeholder="Buscar..." class="barrabusqueda">
-      <button type="button" class="barrabusqueda-btn"><i class="fa fa-search" style="margin-left: -8px"></i></button>
+      <form id="formBuscar" name="formBuscar" action="/product/buscar" style="display: inline-block;">
+        <input type="text" placeholder="Buscar..." class="barrabusqueda" name="busqueda" id="busqueda">
+        <button id="buscar" type="submit" class="barrabusqueda-btn"><i class="fa fa-search" style="margin-left: -8px"></i></button>
+      </form>      
       
       <div class="topnav-right">
         <a href="/" class="enlace-menu"><i class="fa fa-fw fa-home"></i> Inicio</a>
@@ -26,9 +28,11 @@
               <a class="enlace-menu"><i class="fa fa-cog"></i> Configuraciones</a>
               <div class="dropdown-content">            
                 <a href="/category">Categoria</a>            
-                <a href="/rol">Roles</a>
                 <a href="/color">Colores</a>
                 <a href="/brand">Marcas</a>
+                <a href="/product">Productos</a>
+                <a href="/rol">Roles</a>                              
+                <a href="/user">Usuarios</a>
               </div>       
             </div>
           <% } %> 
@@ -36,8 +40,8 @@
 
         <% if (locals.isLogged) { %>
         <div class="dropdown">
-          <a class="enlace-menu"> <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%; margin-top: -10px;"> 
-            Hola, <%= locals.userLogged.fullName %> <i class="fa fa-caret-down"></i></a>
+          <a class="enlace-menu"> <img src="/images/avatars/<%= locals.userLogged.avatar %>" style="border-radius: 100%; margin-top: -10px; width:40px; height:40px;"> 
+            Hola, <%= locals.userLogged.fullname %> <i class="fa fa-caret-down"></i></a>
           <div class="dropdown-content">
             <a href="/user/profile">Mi Perfil</a>
             <a href="/user/logout">Cerrar Sesión</a>
@@ -48,3 +52,12 @@
         <% } %>
   </div>
 </header>
+<script>
+  document.getElementById("buscar").addEventListener("click", function(event){
+    event.preventDefault();
+    let formulario = document.getElementById('formBuscar');
+    let busqueda = document.getElementById('busqueda').value;
+    document.formBuscar.action = '/product/buscar/'+busqueda;    
+    formulario.submit();          
+  });
+</script>

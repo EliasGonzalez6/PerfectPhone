@@ -26,8 +26,7 @@ module.exports = function(sequelize, dataTypes){
         },
         rol: {
             type: dataTypes.INTEGER(11),
-            allowNull:false,
-            unique:true
+            allowNull:false            
         }
     }
 
@@ -40,7 +39,7 @@ module.exports = function(sequelize, dataTypes){
 
     User.associate =function(models) {
         User.belongsTo(models.Rol, {
-            as:"users",
+            as:"roles",
             foreignKey:"rol"
         }),
 

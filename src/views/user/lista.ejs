@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>    
+  <body>
+      
+  <%- include ("../layouts/header") %>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;">
+    
+        <div id="carritoFlotante" class="carrito">
+            <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+        </div>
+        
+        <table style="margin-bottom:50px;" class="sombra form tabla-maestros">
+            <tr>
+                <td colspan="4" style="text-align: right;">        
+                        <a href="user/create"><i class="fa fa-plus btn-verde"></i></a>                    
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" style="text-align: center;"><h2>LISTA DE USUARIOS</h2></th>
+            </tr>
+            <tr>                
+                <th style="text-align: center;" colspan="2"><h3>Nombre</h3></th>
+                <th style="text-align: center;"><h3>Email</h3></th>                
+                <th style="text-align: center;"><h3>Acciones</h3></th>
+            </tr>
+            <% for (let i = 0; i < user.length; i++){ %>                            
+                <tr>
+                    <td>
+                        <a class="enlace-menu"><img src="/images/avatars/<%= user[i].avatar %>" style="border-radius: 100%; margin-top: -10px; width:40px; height:40px;"> 
+                    </td>                            
+                    <td style="text-align: center"; >
+                        <p><%= user[i].fullname %></p>                     
+                    </td>                            
+                    <td style="text-align: center"; >
+                        <p><%= user[i].email %></p>
+                    </td>   
+                    <td style="text-align: center";>
+                        <form action="user/detail/<%= user[i].id %>" style="display: inline-block;">
+                            <button type="submit" style="background-color:transparent;"><i class="fa fa-eye btn-verde" ></i></button>
+                        </form>
+
+                        <form action="user/edit/<%= user[i].id %>" style="display: inline-block;">
+                            <button type="submit" style="background-color:transparent;"><i class="fa fa-edit btn-azul" ></i></button>
+                        </form>
+
+                        <form action="user/delete/<%= user[i].id %>" method="POST" style="display: inline-block;">
+                            <button type="submit" style="background-color:transparent;"><i class="fa fa-trash btn-rojo" ></i></button>
+                        </form>                        
+                    </td>
+                </tr>                                 
+            <% } %>
+        </table>        
+    
+    <%- include ("../layouts/footer") %>
+    </main>
+</body>
+</html>
+
+

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const productController = require("../controllers/productController");
+const product = require('../controllers/product');
 const multer = require('multer');
 const path = require('path');
 
@@ -19,22 +19,21 @@ let dest = multer.diskStorage({
 })
 const upload = multer({storage:dest});
 
-router.get("/",productController.listado);
+router.get("/",product.index)
 
-router.get("/detalle/:id",productController.detail);
+router.get("/create",product.create)
 
-router.get("/buscar/:busqueda",productController.buscar)
+router.get("/:id",product.show)
 
-/********************/
+router.get("/edit/:id",product.edit)
 
-router.get("/create",productController.create)
+//router.post("/save",[upload.single("image")],validations,product.save)
 
-router.post("/create",productController.save)
+router.patch("/update/:id",[upload.single("image")],product.update)
 
-router.get("/edit/:id",productController.edit)
+router.delete("/delete/:id",product.delete)
 
-router.post("/edit/:id",productController.update)
-
-router.post("/delete/:id",productController.delete)
+//procesar el registro
+router.post("/save", [upload.single('image')], validations, product.save);
 
 module.exports = router

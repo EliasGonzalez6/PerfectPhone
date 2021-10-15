@@ -10,39 +10,29 @@
         </div>
 
         <!--<section id="list-products">-->
-         <% list.forEach(product => { %>                  
-            <a href="/product/<%= product.id %>"> 
+        <% for (let i = 0; i < product.length; i++){ %>                    
+            <a href="/product/detalle/<%= product[i].id %>"> 
             <div  class="col-4 col-s-12" style="padding: 20px; width: 25%;">          
                 <div style="width: 100%; background-color: white; padding: 15px;">  <!-- class="sombra" -->    
-                    <table style="text-align: center; width:100%; margin-top: 5px;">  
-                       <!--  <tr>      
-                            <td style="text-align:center"; colspan="2">
-                                <h2><%= product.categoria %></h2>
-                            </td>                
-                        </tr>  -->
+                    <table style="text-align: center; width:100%; margin-top: 5px;">                         
                         <tr>
                             <div style=" text-align: center;"; >
-                                <% if (product.image) { %>
-                                    <img style="width:100%; height: 300px;" src="/uploads/products/<%= product.image%>" alt="">
+                                <% if(product[i].image) { %>
+                                    <img style="width:100%; height: 300px;" src="/uploads/products/<%= product[i].image%>" alt="">
                                 <% } else { %>
                                     <img style="width:100%; height: 300px;" src="/images/default.jpg" alt="">
                                 <% } %>
                             </div>
                                <td style="text-align: center"; >
-                                <p2 style="font-size: 20px;"><%= product.name %></p>
-                                <p style="font-size: 25px">$ <%= product.precio %></p>
+                                <p2 style="font-size: 20px;"><%= product[i].name %></p>
+                                <p style="font-size: 25px">ARS <%= product[i].price %></p>
                                </td>                            
-                        </tr>  
-                            <!--  <tr>      
-                               <td style="text-align: center;"; colspan="2">
-                                <a href="/product/<%= product.id %>">Ver mas</a>
-                               </td>                
-                             </tr> -->
+                        </tr>                              
                     </table>                                                    
                 </div>          
             </div>
         </a>                
-    <% }) %>
+    <% } %>
     <!--</section>-->
     <%- include ("../layouts/footer") %>
     </main>

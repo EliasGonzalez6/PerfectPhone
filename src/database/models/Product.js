@@ -13,7 +13,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull:false
         },
         description: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(500),
             allowNull:true
         },
         image: {
@@ -21,7 +21,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull:true
         },
         price: {
-            type: dataTypes.DECIMAL(10,4),
+            type: dataTypes.DECIMAL(10,2),
             allowNull:false
         },
         stock: {
@@ -34,13 +34,11 @@ module.exports = function(sequelize, dataTypes){
         },
         brand: {
             type: dataTypes.INTEGER(11),
-            allowNull:true,
-            unique:true
+            allowNull:true            
         },
         category: {
             type: dataTypes.INTEGER(11),
-            allowNull:true,
-            unique:true
+            allowNull:true            
         }
     }
 
@@ -59,11 +57,18 @@ module.exports = function(sequelize, dataTypes){
         }),
 
         Product.belongsTo(models.Brand, {
-            as:"products",
+            as:"brands",
             foreignKey:"brand"
-        }),(models.Category, {
-            as:"products",
+        }),
+
+        Product.belongsTo(models.Category, {
+            as:"categories",
             foreignKey:"category"
+        }),
+
+        Product.belongsTo(models.Color, {
+            as:"colors",
+            foreignKey:"color"
         })
     }
 
