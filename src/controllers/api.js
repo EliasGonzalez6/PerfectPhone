@@ -4,42 +4,61 @@ const db = require("../database/models");
 
 module.exports = {
     
-    users: async function(req, res){
+    GetUsers: async function(req, res){
         try {
-        const users = await db.User.findAll()
+        const users = await db.User.findAll({include:["roles"]})
             return res.status(200).json({
-                length: users.length,
+                count: users.length,
                 return: users
             
             });
          } 
          catch(error){
-            return res.status(500), ({user: user}) 
+            return res.status(500), ({error: error}) 
          }
         
     },
 
-    userId: function(req,res) {
-        let user = db.User.findByPk(req.params.id,{
-            include:[{association:"roles"}]
-        })       
-        .then(function (user) {
-            res.render("user/detalle", {user: user})
-        })        
+    GetUserId: async function(req, res){
+        try {
+        const user = await db.User.findByPk(req.params.id,{include:["roles"]})
+            return res.status(200).json({
+                count: user.length,
+                return: user
+            
+            });
+         } 
+         catch(error){
+            return res.status(500), ({error: error}) 
+         }        
     }, 
 
-    products: function(req,res){
-        db.Brand.create({
-            name: req.body.nombre,
-            detail: req.body.detalle
-        });
-        res.redirect("/brand")
+    GetProducts: async function(req, res){
+        try {
+        const products = await db.Product.findAll({include:["brands", "categories", "colors"]})
+            return res.status(200).json({
+                count: products.length,
+                return: products
+            
+            });
+         } 
+         catch(error){
+            return res.status(500), ({error: error}) 
+         }
+        
     },
 
-    productId: function(req,res) {
-        let brand = db.Brand.findByPk(req.params.id)       
-        .then(function (brand) {
-            res.render("brand/editar", {brand: brand})
-        })        
-    }
-};
+    GetProductId: async function(req, res){
+        try {
+        const product = await db.Product.findByPk(req.params.id,{include:["brands", "categories", "colors"]})
+            return res.status(200).json({
+                count: product.length,
+                return: product
+            
+            });
+         } 
+         catch(error){
+            return res.status(500), ({error: error}) 
+         }
+        }
+}

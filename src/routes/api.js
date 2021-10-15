@@ -4,12 +4,12 @@ const path = require("path");
 
 const apiController = require ("../controllers/api")
 
-router.get("/users",apiController.users);
+router.get("/user",apiController.GetUsers);
 
-router.get("/users/:id",apiController.userId);
+router.get("/user/:id",apiController.GetUserId);
 
-router.get("/products",apiController.products);
+router.get("/product",apiController.GetProducts);
 
-router.get("/products/:id",apiController.productId);
+router.get("/product/:id",apiController.GetProductId);
 
 module.exports=router
