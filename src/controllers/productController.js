@@ -53,10 +53,16 @@ const productController = {
 
     save: function(req,res){
         db.Product.create({
-            name: req.body.nombre,
-            detail: req.body.detalle
+            name: req.body.name,
+            description: req.body.description, 
+            image: req.file.filename,                                
+            price: req.body.price,
+            stock: req.body.stock,
+            color: req.body.color,
+            brand: req.body.brand,
+            category: req.body.category
         });
-        res.redirect("/product")
+        res.redirect("productlista")
     },
 
     edit: function(req,res) {
@@ -75,7 +81,7 @@ const productController = {
                 id: req.params.id
             }
         });
-        res.redirect("/product")
+        res.redirect("productlista")
     },
 
     delete: function(req,res){
@@ -84,7 +90,7 @@ const productController = {
                 id: req.params.id
             }
         }); 
-        res.redirect("/product")
+        res.redirect("/product/productlista")
     },
 };
 

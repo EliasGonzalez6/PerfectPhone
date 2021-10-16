@@ -27,11 +27,10 @@ router.get("/buscar/:busqueda",productController.buscar)
 
 router.get("/productlista",productController.productlista);
 
+router.get("/create",productController.create);
+
+router.post("/create", [upload.single('image')], validations, productController.save);
 /********************/
-
-router.get("/create",productController.create)
-
-router.post("/create",productController.save)
 
 router.get("/edit/:id",productController.edit)
 
