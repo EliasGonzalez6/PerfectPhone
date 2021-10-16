@@ -35,8 +35,8 @@ const userController = {
         db.User.create({
             fullname: req.body.fullname,
             email: req.body.email,            
-            password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.body.avatar,
+            password: bcryptjs.hashSync(req.body.password, 10),            
+            avatar: req.file.filename,
             rol: req.body.rol
         });
         res.redirect("/user")
@@ -67,7 +67,7 @@ const userController = {
             fullname: req.body.fullname,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.body.avatar,
+            avatar: req.file.filename,
             rol: req.body.rol
         },{
             where:{
