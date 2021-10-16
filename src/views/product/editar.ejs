@@ -1,80 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
   <%- include ("../layouts/head") %>    
-    <body>
-    <%- include ("../layouts/header") %>
-        <main class="col-12 col-s-12" style="display:block; clear:both; background-color: white; padding-top:10%; padding-bottom:4%;">    
-            <div class="col-6 col-s-12" style="width:25%; margin-left:35%; background-color:white; padding:20px; border: solid 1px gray">
+  <body>
+  <%- include ("../layouts/header") %>
+    <main class="col-12 col-s-12" style="display:block; clear:both; background-color:white; padding-top:10%;  padding-bottom:4%;">    
+        <div class="col-6 col-s-12 sombra form" style="width: 50%; margin-left:25%; background-color: white; padding:20px;">
+            <form action="/product/edit/<%= product.id %>" method="POST" id="create-form" enctype="multipart/form-data">                                              
+                <span class="text-muted">                
+                    <label style="font-size:1.5rem"><strong><a href="/product/productlista">Producto</a> <i class="fa fa-angle-right"></i> Editar</strong></label>                
+                </span>            
+                <hr>                    
+                <div>          
+                    <label for="image"><b style="font-size: 19px;">Imagen</b></label>
+                    <br><br>
+                    <input 
+                    type="file" 
+                    name="image" 
+                    id="image"
+                    >
+                    <p></p>
+                    <% if (locals.errors && errors.image) { %>
+                        <p class="errortexto"> <%= errors.image.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>
+                </div>
+                   
 
-                <form action="/product/update/<%= product.id %>?_method=PATCH" method="post" id="edit-form" enctype="multipart/form-data">
-                    
-                    <img src="/images/logo.jpg" class="logo2" style="margin: 5px; margin-bottom: 20px; margin-left: 130px;">
+                <div>
+                    <label for="name"><b style="font-size: 19px;">Nombre</b></label>
+                    <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Apple AirPods Pro"
+                    value="<%= locals.oldData ? oldData.name : product.name %>"
+                    id="<%= locals.errors && errors.name ? 'error' : product.id %>"
+                    >
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="errortexto"> <%= errors.name.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>
+                </div>
+                                    
+                <div>
+                    <label for="price"><b style="font-size: 19px;">Precio</b></label>
+                    <input 
+                    type="text" 
+                    name="price" 
+                    placeholder="32850.00"
+                    value="<%= locals.oldData ? oldData.price : product.price %>"
+                    id="<%= locals.errors && errors.price ? 'error' : product.id %>"
+                    >
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="errortexto"> <%= errors.price.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>                
+                </div>
 
-                    <h2 style="text-align: center; color: gray;">Editar producto</h2>
+                <div>
+                    <label for="stock"><b style="font-size: 19px;">Stock</b></label>
+                    <input 
+                    type="text" 
+                    name="stock" 
+                    placeholder="50.00"
+                    value="<%= locals.oldData ? oldData.stock : product.stock %>"
+                    id="<%= locals.errors && errors.stock ? 'error' : product.id %>"
+                    >
+                    <% if (locals.errors && errors.stock) { %>
+                        <p class="errortexto"> <%= errors.stock.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>                
+                </div>
+                   
+                <div>
+                    <label for="description"><b style="font-size: 19px;">Descripción</b></label>
+                    <input 
+                    type="text" 
+                    name="description" 
+                    placeholder="Tecnología del sonido"
+                        value="<%= locals.oldData ? oldData.description : product.description %>"
+                        id="<%= locals.errors && errors.description ? 'error' : product.id %>"
+                    >   
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="errortexto"> <%= errors.description.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                        <% } %>
+                </div>
 
-                        <div>
-                        <figure><img src="/uploads/productos/<%=product.image%>" alt="" style="width:30%"></figure>
-                        <label for="image"><b style="font-size: 19px;">Imagen</b></label>
-                        <br><br>
-                        <input type="file" name="image" id="image">
-                        </div>
-                        <br><br>
+                <div>                       
+                    <label for="brand"><b style="font-size: 19px;">Marca</b></label>                
+                    <select name="brand" id="brand">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <% for (let i = 0; i < brand.length; i++){ %>
+                            <% if(brand[i].id == product.brand ){ %>                                                    
+                                <option value="<%= brand[i].id %>" selected><%= brand[i].name %></option>
+                            <% }else{ %>
+                                <option value="<%= brand[i].id %>"><%= brand[i].name %></option>
+                            <% } %>
+                        <% } %>
+                    </select>        
+                    <p></p>
+                    <% if (locals.errors && errors.brand) { %>
+                        <p class="errortexto"> <%= errors.brand.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>
+                </div> 
+                                
+                <div>                       
+                    <label for="category"><b style="font-size: 19px;">Categoria</b></label>                
+                    <select name="category" id="category">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <% for (let i = 0; i < category.length; i++){ %>
+                            <% if(category[i].id == product.category ){ %>                                                    
+                                <option value="<%= category[i].id %>" selected><%= category[i].name %></option>
+                            <% }else{ %>
+                                <option value="<%= category[i].id %>"><%= category[i].name %></option>
+                            <% } %>
+                        <% } %>
+                    </select>        
+                    <p></p>
+                    <% if (locals.errors && errors.category) { %>
+                        <p class="errortexto"> <%= errors.category.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>
+                </div> 
+                
+                <div>
+                    <label for="color"><b style="font-size: 19px;">Color</b></label>                
+                    <select name="color" id="color">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <% for (let i = 0; i < color.length; i++){ %>
+                            <% if(color[i].id == product.color ){ %>                                                    
+                                <option value="<%= color[i].id %>" selected><%= color[i].name %></option>
+                            <% }else{ %>
+                                <option value="<%= color[i].id %>"><%= color[i].name %></option>
+                            <% } %>
+                        <% } %>
+                    </select>
+                    <p></p>
+                    <% if (locals.errors && errors.color) { %>
+                        <p class="errortexto"> <%= errors.color.msg %> <i class="fas fa-exclamation-circle"></i></p>
+                    <% } %>
+                </div>
+                <p></p>        
 
-                        <div>
-                        <label for="name"><b style="font-size: 19px;">Nombre</b></label>
-                        <input type="text" name="name" id="name" style="border: solid 1px gray;" value="<%= product.name %>">
-                        <h2><%= product.categoria %></h2>
-                        </div>                  
-    
-                        <div>
-                        <label for="name"><b style="font-size: 19px;">Precio</b></label>
-                        <input type="text" name="precio" id="precio" style="border: solid 1px gray;" value="<%= product.precio %>">
-                        </div>
-
-                            <div>
-                            <label for="name"><b style="font-size: 19px;">Descripción</b></label>
-                            <input type="text" name="descripcion" id="descripcion" style="border: solid 1px gray" value="<%= product.descripcion %>" >
-                            </div>
-    
-
-                        <div>
-                        <label for="brand"><b style="font-size: 19px;">Categoria</b></label>
-                        <select name="brand" id="brand">
-                            <option value="" selected disabled>Seleccionar</option>
-                            <% brands.forEach(brand => { %>
-                                <% if (product.brand.id == brand.id) { %>
-                                    <option value="<%= brand.id %>"><%= brand.name %></option>
-                                <% } else { %>
-                                    <option value="<%= brand.id %>"><%= brand.name %></option>
-                                <% } %>
-                            <% }) %>
-                        </select>
-                        </div>
-                         <br><br>
-
-                        <div>
-                        <label for="colors"><b style="font-size: 19px;">Color</b></label>
-                        <p></p>
-                        <select name="colors" id="colors" multiple>
-                            <% colors.forEach(color => { %>
-                                <% let match = product.colors.filter(productColor => productColor.id == color.id) %>
-                                <% if (match.length > 0) { %>
-                                    <option selected value="<%= color.id %>" style="<%= `background-color:${color.value};`%>"><%= color.name %></option>
-                                <% } else { %>
-                                    <option value="<%= color.id %>" style="<%= `background-color:${color.value};` %>"><%= color.name %></option>
-                                <% } %>
-                            <% }) %>
-                        </select>
-                        </div>
-                        <p></p>
-
-                       <button type="submit" style="width: 30%; margin-left: 110px; background: gray;">Editar</button>
-                    
-                </form> 
-            </div>  
-        </main>
-
-        <%- include ("../layouts/footer") %>
-
+                <button class="col-5 col-s-5 btn-verde" style="float: left;" type="submit" id="guardar" name="guardar">Guardar</button>                
+                <button class="col-5 col-s-5 btn-rojo" style="float: right;" type="reset">Borrar</button>                
+            
+            </form> 
+        </div>
+    </main>
+    <%- include ("../layouts/footer") %>
 </body>
 </html>

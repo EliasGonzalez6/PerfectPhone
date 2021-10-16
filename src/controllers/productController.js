@@ -89,21 +89,40 @@ const productController = {
         let category = db.Category.findAll(); 
 
         Promise.all([product,brand,color,category])
-        .then(function ([brand,color,category]) {
-            res.render("product/editar", {product:product, brand: brand, color:color, category:category})
-        })              
+        .then(function ([product,brand,color,category]) {
+            res.render("product/editar", {product:product,brand: brand, color:color, category:category})
+        })                      
     }, 
 
     update: function(req,res){
-        db.Product.update({
-            name: req.body.nombre,
-            detail: req.body.detalle
-        },{
-            where:{
-                id: req.params.id
-            }
-        });
-        res.redirect("productlista")
+        const resultValidation = validationResult(req);
+
+		if (resultValidation.errors.length > 0) {
+			return res.render("product/editar", {
+				brand:db.Brand.findAll(),
+                color:db.Color.findAll(),
+                category:db.Category.findAll(),
+                errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+        else {
+            db.Product.update({
+                name: req.body.name,
+                description: req.body.description, 
+                image: req.file.filename,                                
+                price: req.body.price,
+                stock: req.body.stock,
+                color: req.body.color,
+                brand: req.body.brand,
+                category: req.body.category
+            },{
+                where:{
+                    id: req.params.id
+                }
+            });
+            res.redirect("/product/productlista")
+        }         
     },
 
     delete: function(req,res){

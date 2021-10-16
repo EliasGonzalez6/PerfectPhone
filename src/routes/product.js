@@ -30,11 +30,10 @@ router.get("/productlista",productController.productlista);
 router.get("/create",productController.create);
 
 router.post("/create", [upload.single('image')], validations, productController.save);
-/********************/
 
 router.get("/edit/:id",productController.edit)
 
-router.post("/edit/:id",productController.update)
+router.post("/edit/:id", [upload.single('image')], validations, productController.update);
 
 router.post("/delete/:id",productController.delete)
 
