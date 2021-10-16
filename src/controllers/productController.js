@@ -41,7 +41,14 @@ const productController = {
     /*******************/
 
     create: function(req,res){
-        res.render("product/crear")
+        let brand = db.Brand.findAll();
+        let color = db.Color.findAll();
+        let category = db.Category.findAll(); 
+
+        Promise.all([brand,color,category])
+        .then(function ([brand,color,category]) {
+            res.render("product/crear", {brand: brand, color:color, category:category})
+        })         
     },
 
     save: function(req,res){
