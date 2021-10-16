@@ -11,6 +11,13 @@ const productController = {
             })
     },
 
+    productlista: function(req, res){
+        db.Product.findAll()
+            .then(function (product) {
+                res.render("product/productlista", {product: product})
+            })
+    },
+
     detail: function(req,res) {
         let product = db.Product.findByPk(req.params.id,{
             include:[{association:"brands"},{association:"categories"},{association:"colors"}]

@@ -25,6 +25,8 @@ router.get("/detalle/:id",productController.detail);
 
 router.get("/buscar/:busqueda",productController.buscar)
 
+router.get("/productlista",productController.productlista);
+
 /********************/
 
 router.get("/create",productController.create)
