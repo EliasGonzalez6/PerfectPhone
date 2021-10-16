@@ -2,6 +2,10 @@ const express = require("express");
 const db = require("../database/models");
 const Op = require("../../node_modules/sequelize/lib/operators");
 
+const {
+	validationResult
+} = require('express-validator');
+
 const productController = {
     
     listado: function(req, res){
@@ -52,24 +56,42 @@ const productController = {
     },
 
     save: function(req,res){
-        db.Product.create({
-            name: req.body.name,
-            description: req.body.description, 
-            image: req.file.filename,                                
-            price: req.body.price,
-            stock: req.body.stock,
-            color: req.body.color,
-            brand: req.body.brand,
-            category: req.body.category
-        });
-        res.redirect("productlista")
+        const resultValidation = validationResult(req);
+
+		if (resultValidation.errors.length > 0) {
+			return res.render("product/crear", {
+				brand:db.Brand.findAll(),
+                color:db.Color.findAll(),
+                category:db.Category.findAll(),
+                errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+        else {
+            db.Product.create({
+                name: req.body.name,
+                description: req.body.description, 
+                image: req.file.filename,                                
+                price: req.body.price,
+                stock: req.body.stock,
+                color: req.body.color,
+                brand: req.body.brand,
+                category: req.body.category
+            });
+            res.redirect("productlista")
+        }        
     },
 
     edit: function(req,res) {
-        let product = db.Product.findByPk(req.params.id)       
-        .then(function (product) {
-            res.render("product/editar", {product: product})
-        })        
+        let product = db.Product.findByPk(req.params.id)
+        let brand = db.Brand.findAll();
+        let color = db.Color.findAll();
+        let category = db.Category.findAll(); 
+
+        Promise.all([product,brand,color,category])
+        .then(function ([brand,color,category]) {
+            res.render("product/editar", {product:product, brand: brand, color:color, category:category})
+        })              
     }, 
 
     update: function(req,res){
