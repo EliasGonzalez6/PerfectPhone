@@ -28,7 +28,7 @@
 
                 <div class="lado derecho" style=" float:right; width: 40%; margin-top:20px;">
                         <p style="font-size: 25px;"><%= product.name %></p>
-                        <p style="font-size: 25px;">$ <%= product.price %></p>
+                        <p style="font-size: 25px;">ARS <%= product.price %></p>
                         <!-- <p><%= product.brand.name %></p> -->
                     <form action="/carrito" method="GET">
                          
@@ -49,11 +49,11 @@
                             <span style="display: inline-block; width: 1rem; height:1rem; background-color:<%= product.colors.codigo %>;"></span>
                              
                             
-                             <p style="font-size: 20px;"><label for="quantity" style=""> Cantidad:</label></p>
+                             <p style="font-size: 20px;"><label for="quantity"> Cantidad:</label></p>
                              <input type="number" min="1" max="3" value="1" required>
                              <br><br>
                              <p style="font-size: 20px">Descripción:</p> 
-                             <p><%= product.descripcion %></p>
+                             <p style="color: black;"><%= product.descripcion %></p>
                             </div>
                                                                    
                     </form>
@@ -80,41 +80,41 @@
                 <div class="row">
                   
                   <div class="col-3 col-s-12 producto-home" style="padding:20px; margin-top: 50px; margin-bottom: 100px;">          
-                    <a href="/product/11">
+                    <a href="/product/detalle/2">
                     <div style="background-color: white; padding:15px;">           
                       <img src="/images/apple airpods pro.jpg" alt="Snow" style="width:100%; height: 300px;">
                       <p class="texto-column" style=" font-size: 20px;">Apple Airpods pro</p>
-                      <p class="texto-column" style=" font-size: 25px;">$ 32.850</p>          
+                      <p class="texto-column" style=" font-size: 25px;">ARS 32.850</p>          
                     </div>
                     </a>           
                   </div>
           
                   <div class="col-3 col-s-12 producto-home" style="padding:20px; margin-top: 50px; margin-bottom: 100px;">          
-                    <a href="/product/15">
+                    <a href="/product/detalle/15">
                     <div style="background-color: white; padding:15px;">            
                       <img src="/images/reloj smartwatch w26.jpg" alt="Snow" style="width:100%; height: 300px">
                       <p class="texto-column" style=" font-size: 20px;">Reloj Smartwatch W26</p>
-                      <p class="texto-column" style=" font-size: 25px;">$ 4.784</p>       
+                      <p class="texto-column" style=" font-size: 25px;">ARS 4.784</p>       
                     </div>
                     </a>          
                   </div>        
                   
                   <div class="col-3 col-s-12 producto-home" style="padding:20px;  margin-top: 50px; margin-bottom: 100px;">          
-                    <a href="/product/12">
+                    <a href="/product/detalle/3">
                     <div style="background-color: white; padding:15px;">            
                       <img src="/images/auriculares inalambricos jbl e45btjpg.jpg" alt="Snow" style="width:100%; height: 300px">
                       <p class="texto-column" style=" font-size: 20px;">Auricular Vincha E30 Jbl</p>
-                      <p class="texto-column" style=" font-size: 25px;">$ 9.990</p>          
+                      <p class="texto-column" style=" font-size: 25px;">ARS 9.990</p>          
                     </div>
                     </a>          
                   </div>
           
                   <div class="col-3 col-s-12 producto-home" style="padding:20px;  margin-top: 50px; margin-bottom: 100px;">          
-                    <a href="/product/19">
+                    <a href="/product/detalle/19">
                     <div style="background-color: white; padding:15px;">            
                       <img src="/images/aro de luz led 16 cm con tripode.jpg" alt="Snow" style="width:100%; height: 300px">
                       <p class="texto-column" style=" font-size: 20px;">Aro de luz led 16 cm con trípode</p>
-                      <p class="texto-column" style=" font-size: 25px;">$ 1.220</p>             
+                      <p class="texto-column" style=" font-size: 25px;">ARS 1.220</p>             
                     </div> 
                     </a>         
                   </div>        
