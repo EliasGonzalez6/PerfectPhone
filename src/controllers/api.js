@@ -6,33 +6,32 @@ module.exports = {
     
     GetUsers: async function(req, res){
         try {
-        const users = await db.User.findAll({include:["roles"]})
+        const users = await db.User.findAll({include:["roles"], attributes:["id","fullname","email","avatar"]})
             return res.status(200).json({
                 count: users.length,
                 return: users
             
             });
-         } 
-         catch(error){
+        } 
+        catch(error){
             return res.status(500), ({error: error}) 
-         }
-        
+        }        
     },
 
+    
     GetUserId: async function(req, res){
         try {
-        const user = await db.User.findByPk(req.params.id,{include:["roles"]})
+        const user = await db.User.findByPk(req.params.id,{include:["roles"], attributes:["id","fullname","email","avatar"]})
             return res.status(200).json({
                 count: user.length,
-                return: user
-            
+                return: user            
             });
-         } 
-         catch(error){
+        } 
+        catch(error){
             return res.status(500), ({error: error}) 
-         }        
+        }        
     }, 
-
+        
     GetProducts: async function(req, res){
         try {
         const products = await db.Product.findAll({include:["brands", "categories", "colors"]})
@@ -41,11 +40,10 @@ module.exports = {
                 return: products
             
             });
-         } 
-         catch(error){
+        } 
+        catch(error){
             return res.status(500), ({error: error}) 
-         }
-        
+        }        
     },
 
     GetProductId: async function(req, res){
@@ -56,9 +54,9 @@ module.exports = {
                 return: product
             
             });
-         } 
-         catch(error){
+        } 
+        catch(error){
             return res.status(500), ({error: error}) 
-         }
         }
+    }
 }
