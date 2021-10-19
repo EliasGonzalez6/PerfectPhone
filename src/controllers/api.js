@@ -9,8 +9,7 @@ module.exports = {
         const users = await db.User.findAll({attributes:["id","fullname","email","avatar"]})
             return res.status(200).json({
                 count: users.length,                
-                return: users
-                //detail: "http://localhost:3001/user/detail/1"
+                return: users                
             });
         } 
         catch(error){
@@ -40,8 +39,7 @@ module.exports = {
         const products = await db.Product.findAll({include:["brands", "categories", "colors"]})
             return res.status(200).json({
                 count: products.length,
-                return: products
-                //detail: http://localhost:3001/product/detalle/8
+                return: products                
             });
         } 
         catch(error){
