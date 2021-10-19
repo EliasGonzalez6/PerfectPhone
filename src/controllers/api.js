@@ -21,15 +21,18 @@ module.exports = {
     
     GetUserId: async function(req, res){
         try {
-        const user = await db.User.findByPk(req.params.id,{attributes:["id","fullname","email","avatar"]})
-            return res.status(200).json({
+            const user = await db.User.findByPk(req.params.id,{attributes:["id","fullname","email","avatar"]})
+            user.avatar = "/images/avatars/"+user.avatar;
+            
+            let data = res.status(200).json({
                 count: user.length,
-                return: user            
+                users: user,                         
             });
-        } 
+            return data;
+        }         
         catch(error){
             return res.status(500), ({error: error}) 
-        }        
+        }       
     }, 
         
     GetProducts: async function(req, res){
@@ -49,6 +52,8 @@ module.exports = {
     GetProductId: async function(req, res){
         try {
         const product = await db.Product.findByPk(req.params.id,{include:["brands", "categories", "colors"]})
+        product.image = "/uploads/products/"+product.image;
+
             return res.status(200).json({
                 count: product.length,
                 return: product
