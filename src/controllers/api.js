@@ -61,5 +61,18 @@ module.exports = {
         catch(error){
             return res.status(500), ({error: error}) 
         }
+    },
+
+    GetCategories: async function(req, res){
+        try {            
+        const categories = await db.Category.findAll({attributes:["id","name","detail"]})
+            return res.status(200).json({
+                count: categories.length,                
+                return: categories                
+            });
+        } 
+        catch(error){
+            return res.status(500), ({error: error}) 
+        }        
     }
 }

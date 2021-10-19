@@ -12,4 +12,6 @@ router.get("/product",apiController.GetProducts);
 
 router.get("/product/:id",apiController.GetProductId);
 
+router.get("/category",apiController.GetCategories);
+
 module.exports=router
