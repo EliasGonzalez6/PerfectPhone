@@ -5,12 +5,12 @@ const db = require("../database/models");
 module.exports = {
     
     GetUsers: async function(req, res){
-        try {
-        const users = await db.User.findAll({include:["roles"], attributes:["id","fullname","email","avatar"]})
+        try {            
+        const users = await db.User.findAll({attributes:["id","fullname","email","avatar"]})
             return res.status(200).json({
-                count: users.length,
+                count: users.length,                
                 return: users
-            
+                //detail: "http://localhost:3001/user/detail/1"
             });
         } 
         catch(error){
@@ -21,7 +21,7 @@ module.exports = {
     
     GetUserId: async function(req, res){
         try {
-        const user = await db.User.findByPk(req.params.id,{include:["roles"], attributes:["id","fullname","email","avatar"]})
+        const user = await db.User.findByPk(req.params.id,{attributes:["id","fullname","email","avatar"]})
             return res.status(200).json({
                 count: user.length,
                 return: user            
@@ -38,7 +38,7 @@ module.exports = {
             return res.status(200).json({
                 count: products.length,
                 return: products
-            
+                //detail: http://localhost:3001/product/detalle/8
             });
         } 
         catch(error){
