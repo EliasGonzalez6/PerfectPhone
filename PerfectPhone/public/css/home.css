@@ -1,0 +1,504 @@
+*{box-sizing: border-box;}
+  body {margin: 0; padding: 0; border: 0; font-family: 'Roboto', sans-serif;}
+  header {margin: 0; padding: 0; border: 0;}
+  main {margin: 0; padding: 0; padding-top: 50px; border: 0;}
+  footer {margin: 0; padding: 0; border: 0;}
+
+  /* desplazamiento suave */
+  html{
+    scroll-behavior: smooth;
+  }
+
+  /* Inicio Cambios Sergio */
+  a{
+    text-decoration: none;    
+  }
+
+  .sombra{    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+  }
+  
+  textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+  }
+      
+  .form {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 30px;
+  }
+
+  .btn-verde{
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    color: darkgreen;
+    margin: 5px;      
+    padding: 5px;
+    background-color: white;    
+  }
+
+  .btn-verde:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;      
+    padding: 5px;
+    background-color: darkgreen;    
+  }
+
+  .btn-rojo{
+    border: 1px solid darkred;
+    border-radius: 5px;
+    color: darkred;
+    margin: 5px;      
+    padding: 5px;
+    background-color: white;   
+  }
+
+  .btn-rojo:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;      
+    padding: 5px;
+    background-color: darkred;    
+  }
+
+  .btn-azul{
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    color: darkblue;
+    margin: 5px;      
+    padding: 5px;
+    background-color: white;    
+  }
+
+  .btn-azul:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;      
+    padding: 5px;
+    background-color: darkblue;    
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;          
+    /*border: 1px black;*/
+    /*margin-left: 25%;*/
+  }
+
+  .tabla-maestros {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;          
+    /*border: 1px black;*/
+    margin-left: 25%;
+  }
+  
+  td, th {
+    /*border: 1px solid black;*/
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .text-muted{
+    color: dimgray; 
+    opacity:70%;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider-btn {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider-btn:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider-btn {
+    background-color: darkgreen;
+  }
+  
+  input:focus + .slider-btn {
+    box-shadow: 0 0 1px darkgreen;
+  }
+  
+  input:checked + .slider-btn:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider-btn.round {
+    border-radius: 34px;
+  }
+  
+  .slider-btn.round:before {
+    border-radius: 50%;
+  }
+  /* Fin Cambios Sergio */
+
+/* header */
+
+.logo{
+ width: 80px;
+ height: 80px;
+ margin-left: 5px;
+ margin-top: none;
+ margin-bottom: none ;
+}
+
+/*navegación superior color negro */
+.topnav{
+  font-family: 'Roboto', sans-serif;
+ background-color: black;
+ overflow: hidden; 
+ top: 0;
+ position: fixed;
+ z-index: 1;
+}
+
+/* averiguar que es eso tiene efecto en el buscador */
+img {vertical-align: middle;}
+
+
+/* Aplicar estilo a los enlaces dentro de la barra de navegación */
+.topnav a {
+float: left;
+color: rgb(160, 159, 159);
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Cambiar el color de los enlaces al pasar el mouse */
+.topnav a:hover {
+color: white;
+/*text-decoration: underline white;*/
+}
+
+/* Agregue un color al enlace activo / actual */
+.topnav a.active {
+color: white;
+}
+
+/* Sección alineada a la derecha dentro de la navegación superior */
+.topnav-right {
+float: right;
+margin-top: 10px;
+padding: 6px;
+margin-right: 5px;
+}
+
+/* buscador */
+.topnav input[type=text] {
+ width: 300px;
+ float: center;
+ padding: 6px;
+ border: none;
+ margin-top: 10px;
+ margin-left: 50px; 
+ font-size: 17px;
+ border: solid 2px white;
+}
+
+.barrabusqueda{
+  border-radius:10px 0px 0px 10px;
+}
+
+.barrabusqueda-btn{
+  border-radius:0px 10px 10px 0px;
+  width: 10px;
+  border: solid 2px gray;
+ margin-left: -5px;
+ padding: 6px 10px;
+ margin-top: 10px;
+ background-color: gray;
+ font-size: 17px;
+ cursor: pointer;
+}
+
+/* boton desplegable */
+
+.dropdown {
+ float: left;
+ overflow: hidden;
+}
+
+.dropdown .dropbtn {
+ font-size: 17px;  
+ border: none;
+ outline: none;
+ color: white;
+ padding: 14px 16px;
+ background-color: inherit;
+ font-family: inherit;
+ margin: 0;
+}
+
+/* .navbar a:hover, .dropdown:hover .dropbtn {
+ background-color: #5DADE2;
+ color: black; 
+}
+ */
+ 
+.dropdown-content {
+ display: none;
+ background-color: white;
+ min-width: 124px;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ position: fixed;
+ z-index: 1;
+ margin-top: 45px;
+ margin-right: 5px;
+}
+
+.dropdown-content a {
+ float: none;
+ color: white;
+ background-color: gray;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+ text-align: left;
+}
+
+.dropdown-content a:hover {
+ background-color: gray;
+ color: white;
+}
+
+.dropdown:hover .dropdown-content {
+ display: block;
+}
+
+/* main */
+
+.main{
+  background-color: white;
+ }
+
+ /* Estilo de los enlaces dentro de la navegación del carrito flotante*/
+#carritoFlotante a {
+  position: fixed;
+  right: -20px;
+  transition: 0.3s; /* Agregar transición al pasar el mouse*/
+  padding: 15px;
+  width: 100px;
+  text-decoration: none; 
+  font-size: 20px; 
+  color: white;
+  border-radius: 5px 0 0 5px;
+  opacity: 0.6;
+  z-index: 1;
+  margin-left: 1390px;
+}
+
+#carritoFlotante a:hover {
+  right: 0; /* Al pasar el mouse, haga que los elementos aparezcan*/
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 200px;
+  background-color: black;
+}
+ 
+/* imagen corrediza */
+.slider{
+overflow: hidden;
+width: 100%;
+height: 800px;
+}
+
+.slider ul{
+ padding: 0;
+ width: 400%;
+ display: flex;
+ animation: cambio 15s infinite alternate linear;
+}
+.slider li{
+ width: 100%;
+ list-style: none;
+ }
+
+ .slider img{
+  width: 100%;
+  height: 70%;
+ }
+
+/* imagen corrediza */
+@keyframes cambio {
+ 0% {margin-left: 0;}
+ 20% {margin-left: 0;}
+
+ 25% {margin-left: -100%;}
+ 45% {margin-left: -100%;}
+
+ 50% {margin-left: -200%;}
+ 70% {margin-left: -200%;}
+ 
+ 75% {margin-left: -300%;}
+ 100% {margin-left: -300%;}
+}
+
+.titulo-producto{
+ background-color: white;
+ color: rgb(160, 159, 159);
+ font-family: 'Roboto', sans-serif;
+ border: 0px;
+ padding: 90px 0px 50px 0px;
+ text-align: center;
+ font-size: 25px;
+}
+
+.pantalla{
+ background-color: white;
+
+}
+
+/* columna de los productos */
+/* .column {
+ text-align: center;
+ background-color: white;
+ float: left;
+ width: 20%;
+ padding: 5px;
+ margin: 30px;
+ margin-right: auto;
+ margin-top: 150px;
+} */
+
+/* imagen containers */
+.row::after {
+ content: "";
+ clear: both;
+ display: table;
+}
+
+.row {  
+  display: flex;
+ }
+
+.texto-column{
+ color: black;
+ text-align: center;
+}
+
+.producto-home:hover{
+  opacity: 0.6;
+}
+
+/* Diseñe el video: 100% de ancho y alto para cubrir toda la ventana*/
+#myVideo {
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+}
+
+/* footer */
+
+.footer {
+ /* position: fixed; */
+ font-family: 'Roboto', sans-serif;
+ display: flex;
+ text-align: center;
+ background: linear-gradient(90deg, rgb(0, 0, 0,1) 0%, rgba(92,92,99,1) 49%, rgba(0,0,0,1) 78%);
+ color: black;
+ gap: 20%;
+ padding: 5px;
+}
+
+.footer-redes a{
+ padding: 20px;
+ font-size: 25px;
+ text-decoration: none;
+}
+
+.footer-contacto{
+ /* border: solid 2px #5DADE2; */
+}
+
+.footer-redes{
+ /* border: solid 2px #5DADE2; */
+}
+
+.footer-derechos{
+ padding-top: 20px;
+ /* border: solid 2px #5DADE2; */
+}
+
+/****************************** Sergio Responsive *****************************************/
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+ .row {   
+   flex-direction: column;
+ }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+ .navbar a {
+   float: none;
+   width: 100%;
+ }
+}

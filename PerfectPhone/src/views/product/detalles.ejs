@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include ("../layouts/head") %>        
+    <body>
+        <%- include ("../layouts/header") %>
+        <main class="col-12 col-s-12" style=" display:block; clear:both; background-color: white; padding-top:10%; padding-bottom:5%;">    
+
+            <div id="carritoFlotante" class="carrito">
+                <a href="/user/carrito" id="about"><i class="fas fa-shopping-cart"></i> </a>
+              </div>
+
+            <div class="col-6 col-s-12" style="width: 80%;background-color:white; margin-left:10%;">
+        
+                <div class="lado izquierdo" style=" float:left; width:60%; height:100%;">
+                    <% if (product.image) { %>
+       
+                 <figure><img src="/uploads/products/<%= product.image%>" alt="" style="width:100%; height:100%; margin-left:-40px; margin-top:-15px;"></figure>
+                    <% } else { %>
+                 <figure><img src="/images/default.jpg" alt=""></figure>
+                    <% } %>
+                    <p style="margin-top: 250px; font-size: 20px; color: gray;"><b>Información sobre Perfect Phone</b></p>
+                    <p style="font-size: 18px;"><i class="fas fa-map-marker-alt" style="color: dodgerblue;"></i> Ubicacion Palermo, Capital Federal</p>
+                    <p style="font-size: 18px;"><i class="fas fa-check-circle" style="color: dodgerblue;"></i> Brinda buena atención</p>                
+                    <p style="font-size: 18px;"><i class="fas fa-dollar-sign" style="color: dodgerblue;"></i> Ofrece súper descuentos</p>
+                    <br><br>
+
+                </div>
+
+                <div class="lado derecho" style=" float:right; width: 40%; margin-top:20px;">
+                        <p style="font-size: 25px;"><%= product.name %></p>
+                        <p style="font-size: 25px;">ARS <%= product.price %></p>
+                        <!-- <p><%= product.brand.name %></p> -->
+                    <form action="/carrito" method="GET">
+                         
+                        <div>
+                        <p>Calificación de estrellas</p>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        <span class="fa fa-star checked" style="color: orange;"></span>
+                        </div> 
+
+                        <!-- <fieldset> hace el cuadro -->
+                            <div style="margin-top: 10px;">            
+                            <p style="font-size: 20px">Color:</p>                                                       
+                            <input style="display: inline; width: fit-content;" type="radio" name="color" id="color" value="<%= product.colors.id %>" checked/>
+                            <label><%= product.colors.name %></label> 
+                            <span style="display: inline-block; width: 1rem; height:1rem; background-color:<%= product.colors.codigo %>;"></span>
+                             
+                            
+                             <p style="font-size: 20px;"><label for="quantity"> Cantidad:</label></p>
+                             <input type="number" min="1" max="3" value="1" required>
+                             <br><br>
+                             <p style="font-size: 20px">Descripción:</p> 
+                             <p style="color: black;"><%= product.description %></p>
+                            </div>
+                                                                   
+                    </form>
+                             <a href="/user/carrito"><button type="submit" style="width:100%; margin-top:30px; margin-bottom:40px; padding:14px; border-radius:10px; background-color: dodgerblue;">Comprar</button></a>                     
+                              
+                             <p style=" font-size: 20px;">Información de la compra</p>
+                             <p style="color: green; font-size: 18px;"><i class="fas fa-shipping-fast"></i> Llega mañana </p>
+                             <p style="color: green; font-size: 18px;"><i class="fas fa-reply"></i> Devolucion GRATIS</p>  
+                             <p style="">Tenés 30 dias desde que los recibís</p>
+                             <br>
+                             <p style="font-size: 18px; color: dodgerblue;"><i class="fas fa-user-shield"></i> Compra protegida</p>
+                             <p>En Perfect Phone tenés seguridad en tus compras</p>
+                             <p style="font-size: 18px; color: dodgerblue;"><i class="fas fa-credit-card"></i> Medios de pago accesible</p>
+                             <p> Podés pagar con tarjeta o efectivo</p>                                          
+                        <!-- </fieldset> hace el cuadro-->
+                </div>            
+            </div>
+
+              <div class="titulo-producto" style=" margin-top: 400px; text-align: left; margin-left: 80px;">
+                <h3 style="margin-top: 800px;">Personas interesadas en este producto también vieron</h3>
+              </div>
+              
+              <section class="pantalla">  
+                <div class="row">
+                  
+                  <div class="col-3 col-s-12 producto-home" style="padding:20px; margin-top: 50px; margin-bottom: 100px;">          
+                    <a href="/product/detalle/2">
+                    <div style="background-color: white; padding:15px;">           
+                      <img src="/images/apple airpods pro.jpg" alt="Snow" style="width:100%; height: 300px;">
+                      <p class="texto-column" style=" font-size: 20px;">Apple Airpods pro</p>
+                      <p class="texto-column" style=" font-size: 25px;">ARS 32.850</p>          
+                    </div>
+                    </a>           
+                  </div>
+          
+                  <div class="col-3 col-s-12 producto-home" style="padding:20px; margin-top: 50px; margin-bottom: 100px;">          
+                    <a href="/product/detalle/15">
+                    <div style="background-color: white; padding:15px;">            
+                      <img src="/images/reloj smartwatch w26.jpg" alt="Snow" style="width:100%; height: 300px">
+                      <p class="texto-column" style=" font-size: 20px;">Reloj Smartwatch W26</p>
+                      <p class="texto-column" style=" font-size: 25px;">ARS 4.784</p>       
+                    </div>
+                    </a>          
+                  </div>        
+                  
+                  <div class="col-3 col-s-12 producto-home" style="padding:20px;  margin-top: 50px; margin-bottom: 100px;">          
+                    <a href="/product/detalle/3">
+                    <div style="background-color: white; padding:15px;">            
+                      <img src="/images/auriculares inalambricos jbl e45btjpg.jpg" alt="Snow" style="width:100%; height: 300px">
+                      <p class="texto-column" style=" font-size: 20px;">Auricular Vincha E30 Jbl</p>
+                      <p class="texto-column" style=" font-size: 25px;">ARS 9.990</p>          
+                    </div>
+                    </a>          
+                  </div>
+          
+                  <div class="col-3 col-s-12 producto-home" style="padding:20px;  margin-top: 50px; margin-bottom: 100px;">          
+                    <a href="/product/detalle/19">
+                    <div style="background-color: white; padding:15px;">            
+                      <img src="/images/aro de luz led 16 cm con tripode.jpg" alt="Snow" style="width:100%; height: 300px">
+                      <p class="texto-column" style=" font-size: 20px;">Aro de luz led 16 cm con trípode</p>
+                      <p class="texto-column" style=" font-size: 25px;">ARS 1.220</p>             
+                    </div> 
+                    </a>         
+                  </div>        
+              </section>
+            
+        </main>
+         <%- include ("../layouts/footer") %>
+    </body>
+</html>
